@@ -315,7 +315,7 @@ export default function ProjectsBentoGrid() {
               </p>
 
               {/* Page Props Metadata Telemetry Bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-gray-50/80 p-3.5 rounded-xl border border-gray-200/80 my-4 font-mono text-[11px]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-3 py-3 border-y border-gray-100 my-4 font-mono text-[11px]">
                 <div>
                   <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Role</div>
                   <div className="font-semibold text-gray-900 truncate">{project.props.role}</div>
