@@ -18,8 +18,11 @@ export default function HeroSection({ onShowToast }: HeroProps) {
   };
 
   return (
-    <section id="overview" className="relative pt-32 pb-16 md:pt-40 md:pb-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section id="overview" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      {/* Crisp Blueprint Radial Dot Grid Overlay */}
+      <div className="absolute inset-0 bg-editorial-dots pointer-events-none" aria-hidden="true" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* Category Tag */}
         <div className="inline-flex items-center justify-center gap-2 px-3 pt-1.5 pb-1 rounded-full bg-gray-100 border border-gray-200 text-gray-700 text-xs font-mono leading-none mb-6">

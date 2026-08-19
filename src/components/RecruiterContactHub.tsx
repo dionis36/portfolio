@@ -31,8 +31,11 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section id="contact" className="relative py-16 md:py-24 overflow-hidden">
+      {/* Crisp Blueprint Radial Dot Grid Overlay (Footer Bookend) */}
+      <div className="absolute inset-0 bg-editorial-dots pointer-events-none" aria-hidden="true" />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         
         <div className="natural-card bg-white p-8 sm:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
