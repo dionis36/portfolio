@@ -163,7 +163,7 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
                 </a>
 
                 <a
-                  href="https://instagram.com/dionis_nasuwa"
+                  href="https://www.instagram.com/i.t.s_d.i.o/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 p-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group"

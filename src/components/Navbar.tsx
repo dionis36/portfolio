@@ -41,44 +41,41 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
     { name: "Contact", href: "#contact" },
   ];
 
-  // Framer Motion Variants
+  // Framer Motion Variants - Cohesive unified open/close transition
   const menuVariants = {
     closed: {
       opacity: 0,
-      y: -10,
+      y: -8,
       transition: {
-        duration: 0.2,
-        ease: [0.4, 0, 0.2, 1] as const,
-        when: "afterChildren",
-        staggerChildren: 0.03,
-        staggerDirection: -1,
+        duration: 0.15,
+        ease: [0.4, 0, 1, 1] as const,
       },
     },
     open: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.25,
+        duration: 0.2,
         ease: [0.16, 1, 0.3, 1] as const,
-        delayChildren: 0.05,
-        staggerChildren: 0.04,
+        delayChildren: 0.02,
+        staggerChildren: 0.03,
       },
     },
   };
 
   const itemVariants = {
-    closed: { opacity: 0, x: -12 },
-    open: { opacity: 1, x: 0, transition: { duration: 0.2, ease: "easeOut" as const } },
+    closed: { opacity: 0, y: -4 },
+    open: { opacity: 1, y: 0, transition: { duration: 0.15, ease: "easeOut" as const } },
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 border-b ${
         mobileMenuOpen
           ? "bg-[#080a0f] border-white/10 py-3.5"
           : scrolled
-          ? "bg-white/75 backdrop-blur-md border-gray-200/80 py-3 shadow-2xs"
-          : "bg-[#fafafa]/80 backdrop-blur-md border-gray-200/50 py-4"
+          ? "bg-white/75 backdrop-blur-md border-gray-200/80 py-3.5 shadow-2xs"
+          : "bg-[#fafafa]/80 backdrop-blur-md border-gray-200/50 py-3.5"
       }`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -87,7 +84,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
           <img
             src="/dio.png"
             alt="Dionis Nasuwa Logo"
-            className="w-8 h-8 rounded-full object-cover border border-gray-200 group-hover:scale-105 transition-transform"
+            className="w-8 h-8 rounded-full object-cover group-hover:scale-105 transition-transform"
           />
           <div className="flex flex-col">
             <span className={`font-semibold text-sm tracking-tight transition-colors ${
@@ -171,57 +168,35 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="sm:hidden fixed inset-x-0 top-[57px] bottom-0 z-40 bg-[#080a0f] px-6 py-6 overflow-y-auto flex flex-col justify-between border-t border-white/10"
+            className="sm:hidden absolute top-full left-0 right-0 h-[calc(100dvh-100%)] z-40 bg-[#080a0f] px-6 py-6 overflow-y-auto flex flex-col justify-between border-t border-white/10"
           >
             {/* Top Navigation Links */}
-            <div>
-              <motion.div variants={itemVariants} className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-                <span className="text-[11px] font-mono text-gray-400 uppercase tracking-widest">
-                  Navigation & Quick Access
-                </span>
-              </motion.div>
-
-              <div className="flex flex-col space-y-1">
+            <div className="pt-2">
+              <div className="flex flex-col space-y-2">
                 {navLinks.map((link) => (
                   <motion.a
                     key={link.name}
                     href={link.href}
                     variants={itemVariants}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-between text-base font-medium text-gray-200 hover:text-white px-4 py-3.5 rounded-xl hover:bg-white/10 active:bg-white/15 transition-all group border border-transparent hover:border-white/10"
+                    className="flex items-center justify-between text-xl font-semibold text-gray-100 hover:text-white px-4 py-4 rounded-2xl hover:bg-white/10 active:bg-white/15 transition-all group border border-transparent hover:border-white/10"
                   >
-                    <span>{link.name}</span>
-                    <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                    <span className="tracking-tight">{link.name}</span>
+                    <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </motion.a>
                 ))}
               </div>
             </div>
 
-            {/* Bottom Action Section (Quick Search + Resume Download) */}
-            <motion.div variants={itemVariants} className="pt-6 mt-6 border-t border-white/10 space-y-3">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenCmd();
-                }}
-                className="w-full flex items-center justify-between text-xs font-mono text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3.5 rounded-xl transition-all cursor-pointer"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Search className="w-4 h-4 text-gray-400" />
-                  <span>Quick Command Search</span>
-                </div>
-                <kbd className="text-[10px] bg-white/10 text-gray-300 px-2 py-0.5 rounded border border-white/10 font-mono">
-                  ⌘K
-                </kbd>
-              </button>
-
+            {/* Bottom Action Section (Resume Download) */}
+            <motion.div variants={itemVariants} className="pt-6 mt-6 border-t border-white/10 pb-4">
               <a
                 href="/DIONIS_NASUWA_CV.pdf"
                 download
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 text-sm font-semibold bg-white text-gray-900 hover:bg-gray-100 active:scale-[0.98] py-3.5 rounded-xl transition-all shadow-lg"
+                className="w-full flex items-center justify-center gap-2.5 text-base font-semibold bg-white text-gray-900 hover:bg-gray-100 active:scale-[0.98] py-4 rounded-2xl transition-all shadow-lg"
               >
-                <Download className="w-4 h-4 text-gray-900" />
+                <Download className="w-5 h-5 text-gray-900" />
                 <span>Download Resume (PDF)</span>
               </a>
             </motion.div>

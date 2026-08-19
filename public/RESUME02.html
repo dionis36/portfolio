@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dionis Ludovick Nasuwa - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 11mm 13mm 11mm 13mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #111827;
+      background-color: #ffffff;
+      font-size: 8.95pt;
+      line-height: 1.40;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .resume-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid #111827;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    h1.name {
+      font-size: 21.5pt;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: #000000;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .headline {
+      font-size: 10.2pt;
+      font-weight: 600;
+      color: #374151;
+      margin-top: 2.5px;
+      letter-spacing: 0.1px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3px 12px;
+      font-size: 8.4pt;
+      color: #4b5563;
+      margin-top: 4.5px;
+    }
+
+    .contact-row span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 9px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 9.4pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #111827;
+      border-bottom: 1.2px solid #d1d5db;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.75pt;
+      color: #374151;
+      line-height: 1.40;
+      text-align: justify;
+    }
+
+    /* Items */
+    .item {
+      margin-bottom: 7px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9pt;
+      line-height: 1.3;
+      margin-bottom: 1.5px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .item-org {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .item-meta {
+      font-size: 8.2pt;
+      font-weight: 600;
+      color: #4b5563;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Bullet Lists */
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 1.5px;
+    }
+
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 11px;
+      font-size: 8.45pt;
+      color: #374151;
+      line-height: 1.36;
+      margin-bottom: 2px;
+    }
+
+    ul.bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #4b5563;
+      font-weight: bold;
+    }
+
+    ul.bullet-list li strong {
+      color: #111827;
+      font-weight: 600;
+    }
+
+    /* Compact Education & Certifications */
+    .edu-cert-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+    }
+
+    .edu-cert-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.7pt;
+      line-height: 1.3;
+    }
+
+    .edu-cert-left {
+      color: #374151;
+    }
+
+    .edu-cert-left strong {
+      color: #111827;
+    }
+
+    .edu-cert-right {
+      font-size: 8.2pt;
+      font-weight: 600;
+      color: #4b5563;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .edu-coursework {
+      font-size: 8.1pt;
+      color: #4b5563;
+      margin-top: 1.5px;
+      line-height: 1.30;
+    }
+
+    /* Streamlined Skills Matrix */
+    .skills-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3.5px;
+      font-size: 8.5pt;
+      line-height: 1.36;
+    }
+
+    .skills-row {
+      display: flex;
+    }
+
+    .skills-label {
+      width: 160px;
+      font-weight: 700;
+      color: #111827;
+      flex-shrink: 0;
+    }
+
+    .skills-content {
+      color: #374151;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+
+    <!-- HEADER -->
+    <header>
+      <h1 class="name">Dionis Ludovick Nasuwa</h1>
+      <div class="headline">Full-Stack Software Engineer &amp; Systems Developer</div>
+      <div class="contact-row">
+        <span>Dar es Salaam, Tanzania (UTC+3)</span>
+        <span>&bull;</span>
+        <span><a href="mailto:nasuwadio36@gmail.com">nasuwadio36@gmail.com</a></span>
+        <span>&bull;</span>
+        <span>+255 719 231 593 / +255 754 794 174</span>
+      </div>
+      <div class="contact-row" style="margin-top: 2.5px;">
+        <span><strong>Portfolio:</strong>&nbsp;<a href="https://dionis36.github.io">dionis36.github.io</a></span>
+        <span>&bull;</span>
+        <span><strong>GitHub:</strong>&nbsp;<a href="https://github.com/dionis36">github.com/dionis36</a></span>
+        <span>&bull;</span>
+        <span><strong>LinkedIn:</strong>&nbsp;<a href="https://linkedin.com/in/dionis-nasuwa">linkedin.com/in/dionis-nasuwa</a></span>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section>
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">
+        Computer Science student at the <strong>University of Dar es Salaam (CoICT)</strong> with strong competencies in full-stack web engineering, distributed systems architecture, and database design. Certified in <strong>Full Stack Open (University of Helsinki, Grade 5/5)</strong> and <strong>Scrum Fundamentals (SFC™)</strong>. Experienced in developing responsive web applications, RESTful APIs, and distributed monorepos using TypeScript, JavaScript, Python, Node.js, and React, backed by practical experience in network infrastructure optimization.
+      </p>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section>
+      <div class="section-title">Education &amp; Verified Certifications</div>
+      <div class="edu-cert-block">
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>BSc in Computer Science</strong> &mdash; University of Dar es Salaam (CoICT)
+          </div>
+          <div class="edu-cert-right">Expected Oct 2026</div>
+        </div>
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>Full Stack Open Certification</strong> &mdash; University of Helsinki (Grade 5/5 Maximum Score)
+          </div>
+          <div class="edu-cert-right">July 2026</div>
+        </div>
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>Scrum Fundamentals Certified (SFC™)</strong> &mdash; SCRUMstudy Professional Certification
+          </div>
+          <div class="edu-cert-right">July 2026</div>
+        </div>
+        <div class="edu-coursework">
+          <strong>Key Coursework:</strong> Data Structures &amp; Algorithms, Database Systems (SQL), Object-Oriented Analysis &amp; Design (OOAD), Operating Systems &amp; Linux Admin, Computer Networks, Systems Programming.
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL WORK EXPERIENCE -->
+    <section>
+      <div class="section-title">Technical Experience</div>
+
+      <!-- Mainstream Group -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Software Engineering Collaborator</span> &bull; 
+            <span class="item-org">Mainstream Group (Technology Division)</span>
+          </div>
+          <div class="item-meta">March 2026 – May 2026 | Dar es Salaam</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Architected modular application features using <strong>TypeScript</strong> and <strong>Node.js</strong> across multi-service business applications, improving data throughput and system interoperability.</li>
+          <li>Built secure <strong>RESTful API endpoints</strong> and backend data pipelines, participating in bi-weekly Agile sprint workflows, code reviews, and milestone delivery.</li>
+        </ul>
+      </div>
+
+      <!-- UDICTI -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Software Development Trainee</span> &bull; 
+            <span class="item-org">UDICTI / StartHub Africa Partnership</span>
+          </div>
+          <div class="item-meta">July 2025 – Sept 2025 | Dar es Salaam</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Engineered cross-platform mobile interfaces and backend integration for the <strong>Smart Cargo</strong> logistics platform using <strong>Flutter</strong> and <strong>Django</strong>.</li>
+          <li>Implemented dynamic multi-variable rate calculations (distance, weight, fragility) with <strong>OpenStreetMap</strong> API and localized Swahili/English UI modules.</li>
+        </ul>
+      </div>
+
+      <!-- TPC Limited -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">IT Infrastructure Trainee</span> &bull; 
+            <span class="item-org">TPC Limited</span>
+          </div>
+          <div class="item-meta">July 2024 – Sept 2024 | Kilimanjaro</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Configured managed network switches, deployed routers, and set static IP bindings to optimize enterprise LAN uptime and resolve hardware/OS diagnostics across 50+ workstations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CURATED PROJECTS (TOP 3) -->
+    <section>
+      <div class="section-title">Selected Technical Projects</div>
+
+      <!-- Plaqode -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Plaqode Platform &mdash; Digital Identity Monorepo</span>
+          </div>
+          <div class="item-meta">TypeScript · Next.js · Fastify · Turborepo · Prisma · Docker</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Architected an 8-app distributed monorepo with <strong>Turborepo</strong> remote caching, integrating an asymmetric <strong>RS256 JWT</strong> authentication microservice for zero-latency cryptographic verification.</li>
+          <li>Configured isolated <strong>Prisma ORM</strong> schemas per service on PostgreSQL with containerized <strong>Docker</strong> deployments.</li>
+        </ul>
+      </div>
+
+      <!-- INTLEQ -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">INTLEQ &mdash; Local LLM RAG &amp; Vector Search System</span>
+          </div>
+          <div class="item-meta">Python · FastAPI · Ollama · pgvector · PostgreSQL · Docker</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Built an offline-first Retrieval-Augmented Generation (RAG) platform executing local inference via <strong>Ollama (llama3.2)</strong> without cloud API dependencies.</li>
+          <li>Engineered an asynchronous <strong>FastAPI</strong> backend querying <strong>pgvector</strong> cosine similarity embeddings with containerized PostgreSQL.</li>
+        </ul>
+      </div>
+
+      <!-- Strata -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Strata (Final Year Project) &mdash; AST Code Analysis Engine</span>
+          </div>
+          <div class="item-meta">Python · AST Parsing · Graph Theory (SCC) · Streamlit · Docker</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Engineered an analytical code engine converting source code into <strong>Abstract Syntax Trees (ASTs)</strong> and <strong>Directed Acyclic Graphs (DAGs)</strong>.</li>
+          <li>Implemented <strong>Strongly Connected Components (SCC)</strong> clustering algorithms and interactive <strong>Streamlit</strong> dashboards to isolate circular code entanglements.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- STREAMLINED TECHNICAL SKILLS -->
+    <section>
+      <div class="section-title">Technical Skills &amp; Competencies</div>
+      <div class="skills-block">
+        <div class="skills-row">
+          <span class="skills-label">Languages:</span>
+          <span class="skills-content">JavaScript (ES6+), TypeScript, Python, SQL, Dart</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Frontend &amp; Mobile:</span>
+          <span class="skills-content">React, Next.js (App Router), Flutter, Redux Toolkit, Tailwind CSS, Vite, Streamlit</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Backend &amp; Databases:</span>
+          <span class="skills-content">Node.js, Express.js, Fastify, FastAPI, Django, PostgreSQL, MySQL, Redis, Supabase, pgvector, Prisma ORM, RESTful APIs</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">DevOps &amp; Infrastructure:</span>
+          <span class="skills-content">Docker, Turborepo, Git/GitHub Actions, Linux (Ubuntu/Fedora), Nginx, Static IP Routing, LAN Troubleshooting</span>
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Core Methodologies:</span>
+          <span class="skills-content">Agile / Scrum (SFC™ Certified), Object-Oriented Programming (OOP), Test-Driven Development (TDD), AST &amp; Graph Analysis</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

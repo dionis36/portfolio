@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ExternalLink } from "lucide-react";
 
 export default function CertificationsSection() {
   const certs = [
@@ -11,6 +12,7 @@ export default function CertificationsSection() {
       grade: "Grade 5/5 (Maximum Score)",
       description:
         "Comprehensive deep-dive certification covering advanced React, Redux, Node.js, Express, RESTful APIs, GraphQL, TypeScript, and secure web application architecture.",
+      url: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/f6f8b813200d909c8b20ee73c015446d",
     },
     {
       title: "Scrum Fundamentals Certified (SFC™)",
@@ -19,6 +21,7 @@ export default function CertificationsSection() {
       grade: "Professional Certification",
       description:
         "Validated mastery in Agile project management principles, sprint backlog prioritization, daily standups, cross-functional team coordination, and iterative product delivery.",
+      url: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1176426",
     },
     {
       title: "BSc. Computer Science",
@@ -27,6 +30,7 @@ export default function CertificationsSection() {
       grade: "Undergraduate Degree",
       description:
         "Core academic degree focusing on systems programming, software engineering, database management, algorithms, data structures, and enterprise networking.",
+      url: null,
     },
   ];
 
@@ -74,9 +78,21 @@ export default function CertificationsSection() {
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-gray-100 text-[11px] font-mono text-gray-500">
-                Verified Credential
-              </div>
+              {cert.url ? (
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pt-4 mt-6 border-t border-gray-100 text-[11px] font-mono text-gray-500 hover:text-gray-900 flex items-center justify-between group/link transition-colors"
+                >
+                  <span>Verify Credential</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover/link:text-gray-900 transition-colors" />
+                </a>
+              ) : (
+                <div className="pt-4 mt-6 border-t border-gray-100 text-[11px] font-mono text-gray-500">
+                  Academic Degree
+                </div>
+              )}
             </div>
           ))}
         </div>

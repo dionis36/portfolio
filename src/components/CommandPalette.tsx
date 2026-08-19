@@ -29,6 +29,14 @@ const LinkedinIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
+const InstagramIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
+
 interface CommandPaletteProps {
   isOpen: boolean;
   onClose: () => void;
@@ -132,6 +140,34 @@ export default function CommandPalette({
       },
     },
     {
+      id: "verify-helsinki",
+      category: "Verify Credentials",
+      label: "Verify Full Stack Open Certificate (Helsinki Grade 5/5)",
+      icon: GraduationCap,
+      action: () => {
+        window.open(
+          "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/f6f8b813200d909c8b20ee73c015446d",
+          "_blank",
+          "noopener,noreferrer"
+        );
+        onClose();
+      },
+    },
+    {
+      id: "verify-scrum",
+      category: "Verify Credentials",
+      label: "Verify Scrum SFC™ Certificate (SCRUMstudy ID 1176426)",
+      icon: GraduationCap,
+      action: () => {
+        window.open(
+          "https://www.scrumstudy.com/certification/verify?type=SFC&number=1176426",
+          "_blank",
+          "noopener,noreferrer"
+        );
+        onClose();
+      },
+    },
+    {
       id: "github-link",
       category: "External Profiles",
       label: "Open GitHub Profile (github.com/dionis36)",
@@ -148,6 +184,16 @@ export default function CommandPalette({
       icon: LinkedinIcon,
       action: () => {
         window.open("https://linkedin.com/in/dionis-nasuwa", "_blank");
+        onClose();
+      },
+    },
+    {
+      id: "instagram-link",
+      category: "External Profiles",
+      label: "Open Instagram Profile (instagram.com/i.t.s_d.i.o)",
+      icon: InstagramIcon,
+      action: () => {
+        window.open("https://www.instagram.com/i.t.s_d.i.o/", "_blank");
         onClose();
       },
     },

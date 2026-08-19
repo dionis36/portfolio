@@ -10,24 +10,28 @@ export default function ProofMetricsBar() {
       value: "Grade 5/5",
       subtext: "Max score in React, Node, REST & Security",
       icon: Award,
+      link: "https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/f6f8b813200d909c8b20ee73c015446d",
     },
     {
       label: "Industry Experience",
       value: "3 Traineeships",
       subtext: "Mainstream Group, StartHub Africa, TPC Ltd",
       icon: Briefcase,
+      link: null,
     },
     {
       label: "Key Systems Built",
       value: "Monorepos & AST",
       subtext: "Plaqode (TS Monorepo) & Strata (Code AST/DAG)",
       icon: Code,
+      link: null,
     },
     {
       label: "Agile Project Mgmt",
       value: "SFC™ Certified",
       subtext: "SCRUMstudy sprint & delivery validation",
       icon: Terminal,
+      link: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1176426",
     },
   ];
 
@@ -37,11 +41,8 @@ export default function ProofMetricsBar() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((m, idx) => {
             const Icon = m.icon;
-            return (
-              <div
-                key={idx}
-                className="natural-card bg-white p-5 flex flex-col items-center text-center hover:border-gray-300 transition-all shadow-2xs group"
-              >
+            const content = (
+              <>
                 {/* Top-Centered Icon Badge */}
                 <div className="p-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-700 group-hover:text-gray-900 group-hover:bg-gray-100/70 shrink-0 mb-3 transition-colors">
                   <Icon className="w-4 h-4" />
@@ -61,6 +62,25 @@ export default function ProofMetricsBar() {
                 <p className="text-xs text-gray-600 leading-relaxed">
                   {m.subtext}
                 </p>
+              </>
+            );
+
+            return m.link ? (
+              <a
+                key={idx}
+                href={m.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="natural-card bg-white p-5 flex flex-col items-center text-center hover:border-gray-300 transition-all shadow-2xs group cursor-pointer"
+              >
+                {content}
+              </a>
+            ) : (
+              <div
+                key={idx}
+                className="natural-card bg-white p-5 flex flex-col items-center text-center hover:border-gray-300 transition-all shadow-2xs group"
+              >
+                {content}
               </div>
             );
           })}
