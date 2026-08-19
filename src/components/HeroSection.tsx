@@ -22,7 +22,7 @@ export default function HeroSection({ onShowToast }: HeroProps) {
       {/* Crisp Blueprint Radial Dot Grid Overlay */}
       <div className="absolute inset-0 bg-editorial-dots pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-18">
 
         {/* Headline & Editorial Copy */}
         <div className="space-y-4 max-w-3xl">
