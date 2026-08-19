@@ -40,29 +40,27 @@ export default function ProofMetricsBar() {
             return (
               <div
                 key={idx}
-                className="natural-card bg-white p-4.5 flex flex-col justify-between hover:border-gray-300 transition-all shadow-2xs group"
+                className="natural-card bg-white p-5 flex flex-col items-center text-center hover:border-gray-300 transition-all shadow-2xs group"
               >
-                <div>
-                  {/* Icon Inline Beside Primary Value */}
-                  <div className="flex items-center gap-2.5 mb-2">
-                    <div className="p-2 rounded-lg bg-gray-50 border border-gray-200/80 text-gray-700 group-hover:text-gray-900 group-hover:bg-gray-100/70 shrink-0 transition-colors">
-                      <Icon className="w-4 h-4" />
-                    </div>
-                    <div className="text-base font-bold text-gray-900 tracking-tight leading-none">
-                      {m.value}
-                    </div>
-                  </div>
-
-                  {/* Category Label */}
-                  <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider block mb-1">
-                    {m.label}
-                  </span>
-
-                  {/* Descriptive Subtext */}
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    {m.subtext}
-                  </p>
+                {/* Top-Centered Icon Badge */}
+                <div className="p-2.5 rounded-xl bg-gray-50 border border-gray-200/80 text-gray-700 group-hover:text-gray-900 group-hover:bg-gray-100/70 shrink-0 mb-3 transition-colors">
+                  <Icon className="w-4 h-4" />
                 </div>
+
+                {/* Category Label */}
+                <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider block mb-1">
+                  {m.label}
+                </span>
+
+                {/* Primary Metric Headline */}
+                <div className="text-base font-bold text-gray-900 tracking-tight leading-snug mb-1">
+                  {m.value}
+                </div>
+
+                {/* Descriptive Subtext */}
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  {m.subtext}
+                </p>
               </div>
             );
           })}
