@@ -100,7 +100,7 @@ export default function SkillMatrix() {
                       <span className="text-xs font-semibold text-gray-900 truncate pr-1">
                         {skill.name}
                       </span>
-                      <span className="text-[10px] font-mono tabular-nums text-gray-600 bg-white px-2 py-0.5 rounded-md border border-gray-200/80 shrink-0 font-medium">
+                      <span className="inline-flex items-center justify-center text-[10px] font-mono leading-none tabular-nums text-gray-600 bg-white px-2 pt-1 pb-0.5 rounded-md border border-gray-200/80 shrink-0 font-medium">
                         {skill.level}
                       </span>
                     </div>

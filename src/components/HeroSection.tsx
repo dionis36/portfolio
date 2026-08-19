@@ -22,7 +22,7 @@ export default function HeroSection({ onShowToast }: HeroProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* Category Tag */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-gray-700 text-xs font-mono mb-6">
+        <div className="inline-flex items-center justify-center gap-2 px-3 pt-1.5 pb-1 rounded-full bg-gray-100 border border-gray-200 text-gray-700 text-xs font-mono leading-none mb-6">
           <span>Available for Software Engineering Roles</span>
         </div>
 
@@ -43,13 +43,13 @@ export default function HeroSection({ onShowToast }: HeroProps) {
 
         {/* Clean Neutral Credential Badges */}
         <div className="flex flex-wrap gap-2 pt-6 pb-8">
-          <div className="px-3 py-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono tabular-nums">
+          <div className="inline-flex items-center justify-center px-3 pt-2 pb-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono leading-none tabular-nums">
             Helsinki Full Stack Open — Grade 5/5
           </div>
-          <div className="px-3 py-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono">
+          <div className="inline-flex items-center justify-center px-3 pt-2 pb-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono leading-none">
             Scrum Fundamentals Certified (SFC™)
           </div>
-          <div className="px-3 py-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono">
+          <div className="inline-flex items-center justify-center px-3 pt-2 pb-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono leading-none">
             BSc Computer Science @ UDSM CoICT
           </div>
         </div>

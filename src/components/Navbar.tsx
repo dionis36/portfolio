@@ -72,7 +72,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
           >
             <Search className="w-3.5 h-3.5 text-gray-500" />
             <span>Search</span>
-            <kbd className="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded text-gray-500 border border-gray-200">
+            <kbd className="inline-flex items-center justify-center text-[10px] font-mono leading-none bg-gray-100/90 px-1.5 pt-1 pb-0.5 rounded text-gray-500 border border-gray-200/80">
               ⌘K
             </kbd>
           </button>

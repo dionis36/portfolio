@@ -241,7 +241,7 @@ export default function ProjectsBentoGrid() {
 
   return (
     <section id="projects" className="py-16 md:py-24 border-t border-gray-200/80">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4 border-b border-gray-200 pb-6">
@@ -290,7 +290,7 @@ export default function ProjectsBentoGrid() {
             >
               {/* Top Header Row */}
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
-                <span className="text-[11px] font-mono px-3 py-0.5 rounded-full bg-gray-100 text-gray-800 border border-gray-200 font-medium">
+                <span className="inline-flex items-center justify-center text-[11px] font-mono leading-none px-3 pt-1.5 pb-1 rounded-full bg-gray-100 text-gray-800 border border-gray-200 font-medium">
                   {project.categoryLabel}
                 </span>
 
@@ -354,7 +354,7 @@ export default function ProjectsBentoGrid() {
                 {project.badges.map((badge, idx) => (
                   <span
                     key={idx}
-                    className="text-[11px] font-mono tabular-nums px-2.5 py-1 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/80 hover:border-gray-300 transition-colors"
+                    className="inline-flex items-center justify-center text-[11px] font-mono leading-none tabular-nums px-2.5 pt-1.5 pb-1 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/80 hover:border-gray-300 transition-colors"
                   >
                     {badge}
                   </span>
