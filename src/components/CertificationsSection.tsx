@@ -31,7 +31,7 @@ export default function CertificationsSection() {
   ];
 
   return (
-    <section id="certifications" className="py-16 md:py-24 bg-gray-50/60 border-t border-gray-200">
+    <section id="certifications" className="py-16 md:py-24 border-t border-gray-200/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         
         {/* Section Header */}

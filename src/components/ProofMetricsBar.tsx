@@ -32,7 +32,7 @@ export default function ProofMetricsBar() {
   ];
 
   return (
-    <section className="py-8 border-y border-gray-200 bg-white">
+    <section className="py-6 pb-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((m, idx) => {
@@ -40,9 +40,9 @@ export default function ProofMetricsBar() {
             return (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-gray-50/50 border border-gray-200 flex items-start gap-3.5"
+                className="natural-card bg-white p-4 flex items-start gap-3.5 hover:border-gray-300 transition-all shadow-2xs"
               >
-                <div className="p-2 rounded-lg bg-white border border-gray-200 text-gray-700 shrink-0 shadow-2xs">
+                <div className="p-2 rounded-lg bg-gray-100/80 border border-gray-200 text-gray-800 shrink-0">
                   <Icon className="w-4 h-4" />
                 </div>
                 <div>
