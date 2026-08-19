@@ -30,10 +30,10 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 border-b ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-gray-200 py-3 shadow-xs"
-          : "bg-transparent py-5"
+          ? "bg-white/75 backdrop-blur-md border-gray-200/80 py-3 shadow-2xs"
+          : "bg-[#fafafa]/80 backdrop-blur-md border-gray-200/50 py-4"
       }`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -51,7 +51,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
         </a>
 
         {/* Desktop Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-gray-100/80 border border-gray-200/80 rounded-full px-4 py-1.5 backdrop-blur-sm">
+        <nav className="hidden md:flex items-center gap-1 bg-gray-100/60 border border-gray-200/70 rounded-full px-3.5 py-1 backdrop-blur-xs">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -67,7 +67,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
         <div className="hidden sm:flex items-center gap-2">
           <button
             onClick={onOpenCmd}
-            className="flex items-center gap-1.5 text-xs text-gray-600 bg-white border border-gray-200 hover:border-gray-300 hover:text-gray-900 px-3 py-1.5 rounded-lg transition-all shadow-2xs font-mono"
+            className="flex items-center gap-1.5 text-xs text-gray-600 bg-white/80 backdrop-blur-xs border border-gray-200 hover:border-gray-300 hover:text-gray-900 px-3 py-1.5 rounded-lg transition-all shadow-2xs font-mono"
             title="Press Cmd + K to search"
           >
             <Search className="w-3.5 h-3.5 text-gray-500" />
@@ -80,7 +80,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
           <a
             href="/DIONIS_NASUWA_CV.pdf"
             download
-            className="flex items-center gap-2 text-xs font-medium bg-gray-900 hover:bg-gray-800 text-white px-3.5 py-1.5 rounded-lg transition-all shadow-2xs"
+            className="btn-editorial-liquid flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 rounded-lg shadow-2xs"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Resume (PDF)</span>
@@ -91,13 +91,13 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
         <div className="flex sm:hidden items-center gap-2">
           <button
             onClick={onOpenCmd}
-            className="p-2 rounded-lg bg-white border border-gray-200 text-gray-600"
+            className="p-2 rounded-lg bg-white/80 border border-gray-200 text-gray-600"
           >
             <Search className="w-4 h-4" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-white border border-gray-200 text-gray-700"
+            className="p-2 rounded-lg bg-white/80 border border-gray-200 text-gray-700"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -106,7 +106,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
 
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-white border-b border-gray-200 px-4 py-4 space-y-3 shadow-lg">
+        <div className="sm:hidden bg-white/90 backdrop-blur-md border-b border-gray-200 px-4 py-4 space-y-3 shadow-lg">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a

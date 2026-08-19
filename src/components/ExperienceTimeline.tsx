@@ -74,8 +74,8 @@ export default function ExperienceTimeline() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-gray-500">
-                  <span className="flex items-center gap-1 bg-gray-100 px-2.5 py-1 rounded-md border border-gray-200 text-gray-700">
+                <div className="flex flex-wrap items-center gap-3 text-xs font-mono tabular-nums text-gray-500">
+                  <span className="flex items-center gap-1 bg-gray-100 px-2.5 py-1 rounded-md border border-gray-200 text-gray-700 font-medium">
                     <Calendar className="w-3.5 h-3.5 text-gray-400" />
                     {exp.period}
                   </span>

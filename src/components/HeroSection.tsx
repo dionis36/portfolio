@@ -43,13 +43,13 @@ export default function HeroSection({ onShowToast }: HeroProps) {
 
         {/* Clean Neutral Credential Badges */}
         <div className="flex flex-wrap gap-2 pt-6 pb-8">
-          <div className="px-3 py-1.5 rounded-lg bg-gray-100 border border-gray-200 text-gray-800 text-xs font-mono">
+          <div className="px-3 py-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono tabular-nums">
             Helsinki Full Stack Open — Grade 5/5
           </div>
-          <div className="px-3 py-1.5 rounded-lg bg-gray-100 border border-gray-200 text-gray-800 text-xs font-mono">
+          <div className="px-3 py-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono">
             Scrum Fundamentals Certified (SFC™)
           </div>
-          <div className="px-3 py-1.5 rounded-lg bg-gray-100 border border-gray-200 text-gray-800 text-xs font-mono">
+          <div className="px-3 py-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono">
             BSc Computer Science @ UDSM CoICT
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function HeroSection({ onShowToast }: HeroProps) {
           <a
             href="/DIONIS_NASUWA_CV.pdf"
             download
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-white font-medium text-sm transition-all shadow-xs"
+            className="btn-editorial-liquid flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm shadow-xs"
           >
             <Download className="w-4 h-4" />
             <span>Download Resume (PDF)</span>
@@ -67,16 +67,16 @@ export default function HeroSection({ onShowToast }: HeroProps) {
 
           <button
             onClick={copyEmail}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 text-gray-800 font-medium text-sm transition-all shadow-2xs"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs"
           >
             {copied ? (
               <>
-                <Check className="w-4 h-4 text-emerald-600" />
+                <Check className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span className="text-emerald-700 font-mono">Email Copied!</span>
               </>
             ) : (
               <>
-                <Mail className="w-4 h-4 text-gray-500" />
+                <Mail className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
                 <span>nasuwadio36@gmail.com</span>
               </>
             )}
@@ -86,11 +86,11 @@ export default function HeroSection({ onShowToast }: HeroProps) {
             href="https://wa.me/255719231593"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 text-gray-700 text-sm font-medium transition-all shadow-2xs"
+            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs"
           >
-            <MessageSquare className="w-4 h-4 text-gray-500" />
+            <MessageSquare className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
             <span>WhatsApp</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-gray-400" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 transition-colors" />
           </a>
         </div>
       </div>

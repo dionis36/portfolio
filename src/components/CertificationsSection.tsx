@@ -53,10 +53,10 @@ export default function CertificationsSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-800 border border-gray-200">
+                  <span className="text-[11px] font-mono tabular-nums font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-800 border border-gray-200">
                     {cert.grade}
                   </span>
-                  <span className="text-xs font-mono text-gray-500">
+                  <span className="text-xs font-mono tabular-nums text-gray-500">
                     {cert.date}
                   </span>
                 </div>

@@ -14,7 +14,6 @@ export default function SkillMatrix() {
         { name: "Python", level: "Advanced" },
         { name: "React / Next.js", level: "Advanced" },
         { name: "Node.js / Express", level: "Advanced" },
-        { name: "PHP", level: "Proficient" },
         { name: "SQL", level: "Proficient" },
         { name: "Streamlit", level: "Proficient" },
         { name: "Dart", level: "Proficient" },
@@ -98,10 +97,10 @@ export default function SkillMatrix() {
                       key={sIdx}
                       className="p-2 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-between"
                     >
-                      <span className="text-xs font-medium text-gray-800 truncate pr-1">
+                      <span className="text-xs font-semibold text-gray-900 truncate pr-1">
                         {skill.name}
                       </span>
-                      <span className="text-[10px] font-mono text-gray-500 bg-white px-1.5 py-0.5 rounded border border-gray-200 shrink-0">
+                      <span className="text-[10px] font-mono tabular-nums text-gray-600 bg-white px-2 py-0.5 rounded-md border border-gray-200/80 shrink-0 font-medium">
                         {skill.level}
                       </span>
                     </div>

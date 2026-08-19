@@ -46,13 +46,13 @@ export default function ProofMetricsBar() {
                   <Icon className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-base font-bold text-gray-900 font-mono tracking-tight">
+                  <div className="text-base font-bold text-gray-900 font-mono tabular-nums tracking-tight">
                     {m.value}
                   </div>
                   <div className="text-xs font-semibold text-gray-800">
                     {m.label}
                   </div>
-                  <div className="text-[11px] text-gray-500 pt-0.5">
+                  <div className="text-[11px] text-gray-500 pt-0.5 leading-snug">
                     {m.subtext}
                   </div>
                 </div>

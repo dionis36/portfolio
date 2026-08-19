@@ -10,6 +10,13 @@ const GithubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
+interface ProjectPropsMetadata {
+  role: string;
+  scope: string;
+  architecture: string;
+  impact: string;
+}
+
 interface Project {
   id: string;
   title: string;
@@ -17,6 +24,7 @@ interface Project {
   categoryLabel: string;
   tagline: string;
   description: string;
+  props: ProjectPropsMetadata;
   badges: string[];
   highlights: string[];
   githubUrl: string;
@@ -37,9 +45,15 @@ export default function ProjectsBentoGrid() {
       tagline: "Turborepo-orchestrated QR & business card ecosystem with stateless RS256 auth",
       description:
         "Plaqode is a distributed monorepo powering digital QR code generation, business card creation, and event ticketing. Built with Next.js 14/15, Fastify, and Turborepo, it implements stateless RS256 JWT authentication with isolated Prisma clients per service to prevent schema bottlenecks across an 8-app ecosystem.",
+      props: {
+        role: "Lead Systems Architect",
+        scope: "8-App Distributed System",
+        architecture: "Turborepo Monorepo",
+        impact: "RS256 Zero-Latency Auth",
+      },
       badges: ["Next.js 14/15", "Fastify", "Turborepo", "TypeScript", "Prisma ORM", "RS256 JWTs"],
       highlights: [
-        "Stateless RS256 authentication with zero-latency cryptographic verification",
+        "Stateless RS256 authentication with zero-latency asymmetric cryptographic verification",
         "Isolated database strategy with independent Prisma schemas per service on Neon Postgres",
         "Turborepo remote caching ensuring zero redundant builds across 8 integrated applications",
       ],
@@ -55,6 +69,12 @@ export default function ProjectsBentoGrid() {
       tagline: "FastAPI + Ollama + pgvector Retrieval-Augmented Generation engine",
       description:
         "INTLEQ is an offline-first RAG platform enabling private AI inference. The FastAPI backend integrates Ollama (llama3.2:1b) and pgvector (PostgreSQL extension) for semantic vector similarity search without cloud dependencies. Features asyncpg for non-blocking concurrent user sessions.",
+      props: {
+        role: "AI Systems Engineer",
+        scope: "Private Offline RAG",
+        architecture: "FastAPI + pgvector",
+        impact: "Zero Cloud API Reliance",
+      },
       badges: ["FastAPI", "Ollama", "pgvector", "Python", "React/Vite", "Docker"],
       highlights: [
         "Private-by-default RAG architecture with local Ollama LLM execution & pgvector cosine similarity",
@@ -73,6 +93,12 @@ export default function ProjectsBentoGrid() {
       tagline: "AST-based structural analysis engine for de-risking monolith refactoring",
       description:
         "Strata de-risks monolith-to-microservices transformation by converting PHP codebases into structural intelligence graphs. Parses source code into ASTs, computes Strongly Connected Components (SCC) to isolate circular entanglements, and calculates graph centrality risk scores.",
+      props: {
+        role: "Compiler & Graph Architect",
+        scope: "Enterprise Code Audit",
+        architecture: "AST + Graph SCC Theory",
+        impact: "Monolith De-Risking",
+      },
       badges: ["Python 3.11+", "AST Parsing", "Graph Theory", "Streamlit UI", "FastAPI", "Neo4j"],
       highlights: [
         "Graph centrality analysis identifying high-degree bottleneck classes and functions",
@@ -91,6 +117,12 @@ export default function ProjectsBentoGrid() {
       tagline: "Go-native terminal tool analyzing git diffs for Conventional Commit suggestions",
       description:
         "Raven is a terminal CLI written in Go that parses staged git diffs and suggests Conventional Commit messages. Built with Bubble Tea (TUI framework) and Cobra CLI, it offers interactive commit flows with instant undo/fixup primitives in a single 10MB zero-dependency static executable.",
+      props: {
+        role: "Go Systems Engineer",
+        scope: "Developer CLI Tooling",
+        architecture: "Go 1.25 + Bubble Tea",
+        impact: "10MB Zero-Dep Executable",
+      },
       badges: ["Go 1.25+", "Bubble Tea TUI", "Cobra CLI", "Makefile", "Cross-Platform"],
       highlights: [
         "Smart AST-free git diff analysis inferring commit types (feat, fix, docs) automatically",
@@ -109,6 +141,12 @@ export default function ProjectsBentoGrid() {
       tagline: "Next.js + Fastify geospatial analytics for university research dissemination",
       description:
         "A Phase-2 monorepo providing archival and impact monitoring for UDSM academic journals. Next.js 16 integrates deck.gl (GPU-accelerated geospatial rendering) for real-time readership heatmaps. The Fastify backend orchestrates OJS data extraction and PostGIS spatial indexing.",
+      props: {
+        role: "Geospatial Data Engineer",
+        scope: "University Academic Platform",
+        architecture: "deck.gl GPU + PostGIS",
+        impact: "Sub-ms Spatial Analytics",
+      },
       badges: ["Next.js 16", "Fastify", "deck.gl", "PostGIS", "PostgreSQL", "WebSockets"],
       highlights: [
         "GPU-accelerated geospatial rendering via deck.gl + react-map-gl without main-thread blocking",
@@ -127,6 +165,12 @@ export default function ProjectsBentoGrid() {
       tagline: "Express monorepo with Prisma, Redis, and real-time Socket.io events",
       description:
         "Dispatch is a Football League Management System backend built with Express, Prisma, and PostgreSQL. Features a monorepo structure separating REST API endpoints, Redis pub/sub WebSocket live updates (Socket.io), and Redis-backed rate limiting with Swagger UI docs.",
+      props: {
+        role: "Backend Infrastructure Dev",
+        scope: "Sports Analytics Engine",
+        architecture: "Express + Redis Pub/Sub",
+        impact: "Decoupled WebSocket Streams",
+      },
       badges: ["Express.js", "Prisma ORM", "PostgreSQL", "Redis Pub/Sub", "Socket.io", "Swagger UI"],
       highlights: [
         "Socket.io + Redis Pub/Sub decoupling WebSocket live event broadcasting from REST HTTP endpoints",
@@ -145,6 +189,12 @@ export default function ProjectsBentoGrid() {
       tagline: "Django 5 + React + Flutter ecosystem with mobile money escrow & geospatial verification",
       description:
         "PataSpace is a full-stack real estate marketplace and fintech platform engineered for high-density urban rental markets like Dar es Salaam. Built with Django 5.0, React 18 (Redux Toolkit), and Flutter, it integrates M-Pesa/Tigo Pesa mobile money escrow to enable 'Rent Now, Pay Monthly' financing, Africa's Talking SMS pipelines, Leaflet marker clustering, and field-agent GPS photo verification.",
+      props: {
+        role: "Full-Stack FinTech Dev",
+        scope: "Dar es Salaam Urban Rental",
+        architecture: "Django 5 + React + Flutter",
+        impact: "M-Pesa 'Rent Now Pay Monthly'",
+      },
       badges: ["Django 5.0", "React 18", "Flutter", "PostgreSQL", "M-Pesa / SMS", "Leaflet Maps"],
       highlights: [
         "FinTech Mobile Money Escrow Layer: Enables 'Rent Now, Pay Monthly' financing via M-Pesa & Tigo Pesa APIs",
@@ -163,6 +213,12 @@ export default function ProjectsBentoGrid() {
       tagline: "Real-time parcel tracking with multilingual UI and smart distance-based pricing",
       description:
         "Smart Cargo is a Flutter mobile app connecting users with delivery drivers across East Africa. Features real-time tracking, multilingual support (Swahili/English via easy_localization), OpenStreetMap address geocoding, and dynamic distance/weight pricing algorithms.",
+      props: {
+        role: "Mobile Lead Developer",
+        scope: "East Africa Logistics",
+        architecture: "Flutter + OpenStreetMap",
+        impact: "Multi-Variable Distance Pricing",
+      },
       badges: ["Flutter/Dart", "OpenStreetMap", "Firebase Auth", "Django Backend", "Multilingual"],
       highlights: [
         "Multi-variable distance rate calculator (base price + distance + weight + fragility premium)",
@@ -195,7 +251,7 @@ export default function ProjectsBentoGrid() {
               <span>Architectural Systems & Applications</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-              Selected Engineering Projects
+              Selected Projects
             </h2>
           </div>
 
@@ -213,7 +269,7 @@ export default function ProjectsBentoGrid() {
                   setActiveTab(tab.id as any);
                   if (tab.id !== "all") setIsExpanded(true);
                 }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all active:scale-[0.98] ${
                   activeTab === tab.id
                     ? "bg-white text-gray-900 shadow-2xs font-semibold"
                     : "text-gray-600 hover:text-gray-900"
@@ -232,7 +288,7 @@ export default function ProjectsBentoGrid() {
               key={project.id}
               className="natural-card bg-white p-6 sm:p-8 group transition-all"
             >
-              {/* Header Row */}
+              {/* Top Header Row */}
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
                 <span className="text-[11px] font-mono px-3 py-0.5 rounded-full bg-gray-100 text-gray-800 border border-gray-200 font-medium">
                   {project.categoryLabel}
@@ -242,7 +298,7 @@ export default function ProjectsBentoGrid() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs font-mono text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 px-3 py-1 rounded-lg border border-gray-200 transition-colors"
+                  className="flex items-center gap-1 text-xs font-mono text-gray-600 hover:text-gray-900 active:scale-[0.98] bg-gray-50 hover:bg-gray-100 px-3 py-1 rounded-lg border border-gray-200 transition-all"
                 >
                   <GithubIcon className="w-4 h-4 text-gray-700" />
                   <span>View Repository</span>
@@ -257,6 +313,26 @@ export default function ProjectsBentoGrid() {
               <p className="text-xs font-mono text-gray-500 mb-4">
                 {project.tagline}
               </p>
+
+              {/* Page Props Metadata Telemetry Bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-gray-50/80 p-3.5 rounded-xl border border-gray-200/80 my-4 font-mono text-[11px]">
+                <div>
+                  <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Role</div>
+                  <div className="font-semibold text-gray-900 truncate">{project.props.role}</div>
+                </div>
+                <div>
+                  <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Scope</div>
+                  <div className="font-semibold text-gray-900 truncate">{project.props.scope}</div>
+                </div>
+                <div>
+                  <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Architecture</div>
+                  <div className="font-semibold text-gray-900 truncate">{project.props.architecture}</div>
+                </div>
+                <div>
+                  <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Impact</div>
+                  <div className="font-semibold text-gray-900 truncate">{project.props.impact}</div>
+                </div>
+              </div>
 
               {/* Description */}
               <p className="text-sm text-gray-600 leading-relaxed mb-5">
@@ -278,7 +354,7 @@ export default function ProjectsBentoGrid() {
                 {project.badges.map((badge, idx) => (
                   <span
                     key={idx}
-                    className="text-xs font-mono px-3 py-1 rounded-md bg-gray-100 text-gray-700 border border-gray-200"
+                    className="text-[11px] font-mono tabular-nums px-2.5 py-1 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/80 hover:border-gray-300 transition-colors"
                   >
                     {badge}
                   </span>
@@ -293,7 +369,7 @@ export default function ProjectsBentoGrid() {
           <div className="mt-10 text-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-semibold transition-all shadow-2xs"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 active:scale-[0.98] text-gray-800 text-xs font-mono font-semibold transition-all shadow-2xs"
             >
               {isExpanded ? (
                 <>
