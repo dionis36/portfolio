@@ -24,11 +24,6 @@ export default function HeroSection({ onShowToast }: HeroProps) {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
 
-        {/* Category Tag */}
-        <div className="inline-flex items-center justify-center gap-2 px-3 pt-1.5 pb-1 rounded-full bg-gray-100 border border-gray-200 text-gray-700 text-xs font-mono leading-none mb-6">
-          <span>Available for Software Engineering Roles</span>
-        </div>
-
         {/* Headline & Editorial Copy */}
         <div className="space-y-4 max-w-3xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-900">
@@ -39,22 +34,9 @@ export default function HeroSection({ onShowToast }: HeroProps) {
             Full-Stack Software Engineer & Systems Architect
           </p>
 
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2">
-            Computer Science graduate from <strong className="text-gray-900 font-semibold">UDSM CoICT</strong>. Certified in <strong className="text-gray-900 font-semibold">Full Stack Open (University of Helsinki, Grade 5/5)</strong> and <strong className="text-gray-900 font-semibold">Scrum Fundamentals (SFC™)</strong>. Focused on architecting high-availability TypeScript monorepos, AST code parsers, and enterprise network infrastructure.
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2 mb-8">
+            BSc in Computer Science graduate from the <strong className="text-gray-900 font-semibold">University of Dar es Salaam (UDSM)</strong>. Certified in <strong className="text-gray-900 font-semibold">Full Stack Open (University of Helsinki, Grade 5/5)</strong> and <strong className="text-gray-900 font-semibold">Scrum Fundamentals (SFC™)</strong>. Specialized in engineering scalable full-stack web applications, TypeScript monorepos, AST code analysis engines, and enterprise network infrastructure.
           </p>
-        </div>
-
-        {/* Clean Neutral Credential Badges */}
-        <div className="flex flex-wrap gap-2 pt-6 pb-8">
-          <div className="inline-flex items-center justify-center px-3 pt-2 pb-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono leading-none tabular-nums">
-            Helsinki Full Stack Open — Grade 5/5
-          </div>
-          <div className="inline-flex items-center justify-center px-3 pt-2 pb-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono leading-none">
-            Scrum Fundamentals Certified (SFC™)
-          </div>
-          <div className="inline-flex items-center justify-center px-3 pt-2 pb-1.5 rounded-lg bg-gray-100/90 border border-gray-200/80 text-gray-800 text-xs font-mono leading-none">
-            BSc Computer Science @ UDSM CoICT
-          </div>
         </div>
 
         {/* Action Buttons */}

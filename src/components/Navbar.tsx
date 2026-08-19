@@ -38,11 +38,13 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         
-        {/* Brand */}
+        {/* Brand Logo */}
         <a href="#overview" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-lg bg-gray-900 flex items-center justify-center font-mono text-xs font-bold text-white shadow-xs">
-            DN
-          </div>
+          <img
+            src="/dio.png"
+            alt="Dionis Nasuwa Logo"
+            className="w-8 h-8 rounded-full object-cover border border-gray-200 group-hover:scale-105 transition-transform"
+          />
           <div className="flex flex-col">
             <span className="font-semibold text-gray-900 text-sm tracking-tight group-hover:text-gray-600 transition-colors">
               Dionis Nasuwa

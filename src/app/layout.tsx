@@ -35,6 +35,11 @@ export const metadata: Metadata = {
       "BSc Computer Science @ UDSM CoICT | Certified Full Stack Open (Grade 5/5) & Scrum SFC™. Explore systems projects, monorepo architectures, and technical experience.",
     type: "website",
   },
+  icons: {
+    icon: "/dio.png",
+    shortcut: "/dio.png",
+    apple: "/dio.png",
+  },
 };
 
 export default function RootLayout({

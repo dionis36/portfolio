@@ -9,52 +9,52 @@ export default function SkillMatrix() {
       title: "Programming & Web Stack",
       icon: Code2,
       skills: [
-        { name: "TypeScript", level: "Advanced" },
-        { name: "JavaScript (ES6+)", level: "Advanced" },
-        { name: "Python", level: "Advanced" },
-        { name: "React / Next.js", level: "Advanced" },
-        { name: "Node.js / Express", level: "Advanced" },
-        { name: "SQL", level: "Proficient" },
-        { name: "Streamlit", level: "Proficient" },
-        { name: "Dart", level: "Proficient" },
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "Python",
+        "React / Next.js",
+        "Node.js / Express",
+        "SQL",
+        "Streamlit",
+        "Dart",
       ],
     },
     {
       title: "Databases, Cloud & DevOps",
       icon: Server,
       skills: [
-        { name: "Docker Containerization", level: "Advanced" },
-        { name: "Fly.io & Vercel Deployments", level: "Advanced" },
-        { name: "Nginx Reverse Proxy", level: "Advanced" },
-        { name: "PostgreSQL & MySQL", level: "Advanced" },
-        { name: "Supabase & Redis", level: "Proficient" },
-        { name: "Git & Monorepos", level: "Advanced" },
-        { name: "SSH & Linux Admin", level: "Advanced" },
-        { name: "REST & GraphQL APIs", level: "Advanced" },
+        "Docker Containerization",
+        "Fly.io & Vercel Deployments",
+        "Nginx Reverse Proxy",
+        "PostgreSQL & MySQL",
+        "Supabase & Redis",
+        "Git & Monorepos",
+        "SSH & Linux Admin",
+        "REST & GraphQL APIs",
       ],
     },
     {
       title: "Networking & Enterprise Infra",
       icon: Network,
       skills: [
-        { name: "Switch & Router Deployment", level: "Hands-on" },
-        { name: "Static IP Binding", level: "Hands-on" },
-        { name: "LAN Setup & Troubleshooting", level: "Hands-on" },
-        { name: "Hardware Diagnostics & Repair", level: "Hands-on" },
-        { name: "Endpoint Network Security", level: "Hands-on" },
-        { name: "Enterprise Maintenance", level: "Hands-on" },
+        "Switch & Router Deployment",
+        "Static IP Binding",
+        "LAN Setup & Troubleshooting",
+        "Hardware Diagnostics & Repair",
+        "Endpoint Network Security",
+        "Enterprise Maintenance",
       ],
     },
     {
       title: "Methodologies & Certifications",
       icon: Terminal,
       skills: [
-        { name: "Agile / Scrum (SFC™ Certified)", level: "Certified" },
-        { name: "Full Stack Open (Helsinki 5/5)", level: "Certified" },
-        { name: "Monorepo Architecture", level: "Practiced" },
-        { name: "Automated CI/CD Pipelines", level: "Practiced" },
-        { name: "AST & DAG Code Parsing", level: "Specialized" },
-        { name: "Systems Analysis & Analytics", level: "Practiced" },
+        "Agile / Scrum (SFC™ Certified)",
+        "Full Stack Open (Helsinki 5/5)",
+        "Monorepo Architecture",
+        "Automated CI/CD Pipelines",
+        "AST & DAG Code Parsing",
+        "Systems Analysis & Analytics",
       ],
     },
   ];
@@ -91,19 +91,15 @@ export default function SkillMatrix() {
                   </h3>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2">
-                  {cat.skills.map((skill, sIdx) => (
-                    <div
+                {/* Skill Pills */}
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map((skillName, sIdx) => (
+                    <span
                       key={sIdx}
-                      className="p-2 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-between"
+                      className="px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-xs font-medium text-gray-800 hover:bg-gray-100 hover:text-gray-900 transition-colors"
                     >
-                      <span className="text-xs font-semibold text-gray-900 truncate pr-1">
-                        {skill.name}
-                      </span>
-                      <span className="inline-flex items-center justify-center text-[10px] font-mono leading-none tabular-nums text-gray-600 bg-white px-2 pt-1 pb-0.5 rounded-md border border-gray-200/80 shrink-0 font-medium">
-                        {skill.level}
-                      </span>
-                    </div>
+                      {skillName}
+                    </span>
                   ))}
                 </div>
               </div>
