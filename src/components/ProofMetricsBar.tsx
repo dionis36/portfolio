@@ -40,21 +40,28 @@ export default function ProofMetricsBar() {
             return (
               <div
                 key={idx}
-                className="natural-card bg-white p-4 flex items-start gap-3.5 hover:border-gray-300 transition-all shadow-2xs"
+                className="natural-card bg-white p-4.5 flex flex-col justify-between hover:border-gray-300 transition-all shadow-2xs group"
               >
-                <div className="p-2 rounded-lg bg-gray-100/80 border border-gray-200 text-gray-800 shrink-0">
-                  <Icon className="w-4 h-4" />
-                </div>
                 <div>
-                  <div className="text-base font-bold text-gray-900 font-mono tabular-nums tracking-tight">
-                    {m.value}
+                  {/* Icon Inline Beside Primary Value */}
+                  <div className="flex items-center gap-2.5 mb-2">
+                    <div className="p-2 rounded-lg bg-gray-50 border border-gray-200/80 text-gray-700 group-hover:text-gray-900 group-hover:bg-gray-100/70 shrink-0 transition-colors">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div className="text-base font-bold text-gray-900 tracking-tight leading-none">
+                      {m.value}
+                    </div>
                   </div>
-                  <div className="text-xs font-semibold text-gray-800">
+
+                  {/* Category Label */}
+                  <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider block mb-1">
                     {m.label}
-                  </div>
-                  <div className="text-[11px] text-gray-500 pt-0.5 leading-snug">
+                  </span>
+
+                  {/* Descriptive Subtext */}
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     {m.subtext}
-                  </div>
+                  </p>
                 </div>
               </div>
             );
