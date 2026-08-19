@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Download, Search, Menu, X, FileText } from "lucide-react";
+import { Download, Search, Menu, X, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NavbarProps {
   onOpenCmd: () => void;
@@ -19,6 +20,18 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: "About", href: "#overview" },
     { name: "Projects", href: "#projects" },
@@ -28,16 +41,47 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
     { name: "Contact", href: "#contact" },
   ];
 
+  // Framer Motion Variants
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      y: -10,
+      transition: {
+        duration: 0.2,
+        ease: [0.4, 0, 0.2, 1] as const,
+        when: "afterChildren",
+        staggerChildren: 0.03,
+        staggerDirection: -1,
+      },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.25,
+        ease: [0.16, 1, 0.3, 1] as const,
+        delayChildren: 0.05,
+        staggerChildren: 0.04,
+      },
+    },
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, x: -12 },
+    open: { opacity: 1, x: 0, transition: { duration: 0.2, ease: "easeOut" as const } },
+  };
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 border-b ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b ${
+        mobileMenuOpen
+          ? "bg-[#080a0f] border-white/10 py-3.5"
+          : scrolled
           ? "bg-white/75 backdrop-blur-md border-gray-200/80 py-3 shadow-2xs"
           : "bg-[#fafafa]/80 backdrop-blur-md border-gray-200/50 py-4"
       }`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-        
         {/* Brand Logo */}
         <a href="#overview" className="flex items-center gap-3 group">
           <img
@@ -46,7 +90,9 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
             className="w-8 h-8 rounded-full object-cover border border-gray-200 group-hover:scale-105 transition-transform"
           />
           <div className="flex flex-col">
-            <span className="font-semibold text-gray-900 text-sm tracking-tight group-hover:text-gray-600 transition-colors">
+            <span className={`font-semibold text-sm tracking-tight transition-colors ${
+              mobileMenuOpen ? "text-white" : "text-gray-900 group-hover:text-gray-600"
+            }`}>
               Dionis Nasuwa
             </span>
           </div>
@@ -69,7 +115,7 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
         <div className="hidden sm:flex items-center gap-2">
           <button
             onClick={onOpenCmd}
-            className="flex items-center gap-1.5 text-xs text-gray-600 bg-white/80 backdrop-blur-xs border border-gray-200 hover:border-gray-300 hover:text-gray-900 px-3 py-1.5 rounded-lg transition-all shadow-2xs font-mono"
+            className="flex items-center gap-1.5 text-xs text-gray-600 bg-white/80 backdrop-blur-xs border border-gray-200 hover:border-gray-300 hover:text-gray-900 px-3 py-1.5 rounded-lg transition-all shadow-2xs font-mono cursor-pointer"
             title="Press Cmd + K to search"
           >
             <Search className="w-3.5 h-3.5 text-gray-500" />
@@ -93,47 +139,97 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
         <div className="flex sm:hidden items-center gap-2">
           <button
             onClick={onOpenCmd}
-            className="p-2 rounded-lg bg-white/80 border border-gray-200 text-gray-600"
+            className={`p-2 rounded-lg border active:scale-95 transition-all ${
+              mobileMenuOpen
+                ? "bg-white/10 border-white/10 text-gray-300"
+                : "bg-white/80 border-gray-200 text-gray-600"
+            }`}
           >
             <Search className="w-4 h-4" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-white/80 border border-gray-200 text-gray-700"
+            className="p-2 rounded-lg bg-[#080a0f] text-white border border-[#1e2638] active:scale-95 transition-transform shadow-xs cursor-pointer"
+            aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <motion.div
+              animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5 text-gray-200" /> : <Menu className="w-5 h-5 text-gray-200" />}
+            </motion.div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
-      {mobileMenuOpen && (
-        <div className="sm:hidden bg-white/90 backdrop-blur-md border-b border-gray-200 px-4 py-4 space-y-3 shadow-lg">
-          <div className="flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm text-gray-700 hover:text-gray-900 py-1.5 font-medium border-b border-gray-100"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+      {/* Full-Screen Mobile Solid Dark Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            key="mobile-drawer"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="sm:hidden fixed inset-x-0 top-[57px] bottom-0 z-40 bg-[#080a0f] px-6 py-6 overflow-y-auto flex flex-col justify-between border-t border-white/10"
+          >
+            {/* Top Navigation Links */}
+            <div>
+              <motion.div variants={itemVariants} className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                <span className="text-[11px] font-mono text-gray-400 uppercase tracking-widest">
+                  Navigation & Quick Access
+                </span>
+              </motion.div>
 
-          <div className="pt-2">
-            <a
-              href="/DIONIS_NASUWA_CV.pdf"
-              download
-              className="w-full flex items-center justify-center gap-2 text-xs font-semibold bg-gray-900 text-white py-2.5 rounded-lg"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Download Resume (PDF)</span>
-            </a>
-          </div>
-        </div>
-      )}
+              <div className="flex flex-col space-y-1">
+                {navLinks.map((link) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    variants={itemVariants}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-between text-base font-medium text-gray-200 hover:text-white px-4 py-3.5 rounded-xl hover:bg-white/10 active:bg-white/15 transition-all group border border-transparent hover:border-white/10"
+                  >
+                    <span>{link.name}</span>
+                    <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom Action Section (Quick Search + Resume Download) */}
+            <motion.div variants={itemVariants} className="pt-6 mt-6 border-t border-white/10 space-y-3">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenCmd();
+                }}
+                className="w-full flex items-center justify-between text-xs font-mono text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-3.5 rounded-xl transition-all cursor-pointer"
+              >
+                <div className="flex items-center gap-2.5">
+                  <Search className="w-4 h-4 text-gray-400" />
+                  <span>Quick Command Search</span>
+                </div>
+                <kbd className="text-[10px] bg-white/10 text-gray-300 px-2 py-0.5 rounded border border-white/10 font-mono">
+                  ⌘K
+                </kbd>
+              </button>
+
+              <a
+                href="/DIONIS_NASUWA_CV.pdf"
+                download
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 text-sm font-semibold bg-white text-gray-900 hover:bg-gray-100 active:scale-[0.98] py-3.5 rounded-xl transition-all shadow-lg"
+              >
+                <Download className="w-4 h-4 text-gray-900" />
+                <span>Download Resume (PDF)</span>
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
+
+
