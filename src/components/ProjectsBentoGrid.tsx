@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ArrowUpRight, Check, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import TechBadge from "./TechBadge";
 
 // Custom Github Icon Component
 const GithubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
@@ -352,12 +353,7 @@ export default function ProjectsBentoGrid() {
               {/* Tech Stack Badges */}
               <div className="flex flex-wrap gap-1.5 pt-4 border-t border-gray-100">
                 {project.badges.map((badge, idx) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center justify-center text-[11px] font-mono leading-none tabular-nums px-2.5 pt-1.5 pb-1 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/80 hover:border-gray-300 transition-colors"
-                  >
-                    {badge}
-                  </span>
+                  <TechBadge key={idx} name={badge} />
                 ))}
               </div>
             </div>

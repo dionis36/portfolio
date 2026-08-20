@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Code2, Server, Network, Terminal } from "lucide-react";
+import TechBadge from "./TechBadge";
 
 export default function SkillMatrix() {
   const categories = [
@@ -91,15 +92,10 @@ export default function SkillMatrix() {
                   </h3>
                 </div>
 
-                {/* Skill Pills */}
+                {/* Skill Pills with Selective Tech Icons */}
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skillName, sIdx) => (
-                    <span
-                      key={sIdx}
-                      className="px-3 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-xs font-medium text-gray-800 hover:bg-gray-100 hover:text-gray-900 transition-colors"
-                    >
-                      {skillName}
-                    </span>
+                    <TechBadge key={sIdx} name={skillName} />
                   ))}
                 </div>
               </div>

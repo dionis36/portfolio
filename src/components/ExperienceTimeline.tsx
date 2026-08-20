@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Calendar, MapPin, Check } from "lucide-react";
+import TechBadge from "./TechBadge";
 
 export default function ExperienceTimeline() {
   const experiences = [
@@ -99,12 +100,7 @@ export default function ExperienceTimeline() {
               {/* Tags */}
               <div className="flex flex-wrap gap-1.5 pt-2">
                 {exp.tags.map((t, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-mono px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 border border-gray-200"
-                  >
-                    {t}
-                  </span>
+                  <TechBadge key={i} name={t} />
                 ))}
               </div>
             </div>
