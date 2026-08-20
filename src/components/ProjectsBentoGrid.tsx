@@ -256,7 +256,7 @@ export default function ProjectsBentoGrid() {
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1 bg-gray-100 p-1 rounded-xl border border-gray-200">
+          <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-xl border border-gray-200 overflow-x-auto max-w-full sm:flex-wrap no-scrollbar">
             {[
               { id: "all", label: "All Systems (8)" },
               { id: "ai-systems", label: "AI & Systems" },
@@ -269,7 +269,7 @@ export default function ProjectsBentoGrid() {
                   setActiveTab(tab.id as any);
                   if (tab.id !== "all") setIsExpanded(true);
                 }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all active:scale-[0.98] ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 whitespace-nowrap active:scale-[0.98] ${
                   activeTab === tab.id
                     ? "bg-white text-gray-900 shadow-2xs font-semibold"
                     : "text-gray-600 hover:text-gray-900"
@@ -286,10 +286,10 @@ export default function ProjectsBentoGrid() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="natural-card bg-white p-6 sm:p-8 group transition-all"
+              className="natural-card bg-white p-5 sm:p-8 group transition-all"
             >
               {/* Top Header Row */}
-              <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+              <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
                 <span className="inline-flex items-center justify-center text-[11px] font-mono leading-none px-3 pt-1.5 pb-1 rounded-full bg-gray-100 text-gray-800 border border-gray-200 font-medium">
                   {project.categoryLabel}
                 </span>
@@ -298,7 +298,7 @@ export default function ProjectsBentoGrid() {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs font-mono text-gray-600 hover:text-gray-900 active:scale-[0.98] bg-gray-50 hover:bg-gray-100 px-3 py-1 rounded-lg border border-gray-200 transition-all"
+                  className="flex items-center gap-1 text-xs font-mono text-gray-600 hover:text-gray-900 active:scale-[0.98] bg-gray-50 hover:bg-gray-100 px-3 py-1 rounded-lg border border-gray-200 transition-all shrink-0"
                 >
                   <GithubIcon className="w-4 h-4 text-gray-700" />
                   <span>View Repository</span>
@@ -315,22 +315,22 @@ export default function ProjectsBentoGrid() {
               </p>
 
               {/* Page Props Metadata Telemetry Bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-3 py-3 border-y border-gray-100 my-4 font-mono text-[11px]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-3 py-3 border-y border-gray-100 my-4 font-mono text-[11px]">
                 <div>
                   <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Role</div>
-                  <div className="font-semibold text-gray-900 truncate">{project.props.role}</div>
+                  <div className="font-semibold text-gray-900 break-words leading-snug">{project.props.role}</div>
                 </div>
                 <div>
                   <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Scope</div>
-                  <div className="font-semibold text-gray-900 truncate">{project.props.scope}</div>
+                  <div className="font-semibold text-gray-900 break-words leading-snug">{project.props.scope}</div>
                 </div>
                 <div>
                   <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Architecture</div>
-                  <div className="font-semibold text-gray-900 truncate">{project.props.architecture}</div>
+                  <div className="font-semibold text-gray-900 break-words leading-snug">{project.props.architecture}</div>
                 </div>
                 <div>
                   <div className="text-gray-400 uppercase tracking-wider text-[9px] mb-0.5 font-semibold">Impact</div>
-                  <div className="font-semibold text-gray-900 truncate">{project.props.impact}</div>
+                  <div className="font-semibold text-gray-900 break-words leading-snug">{project.props.impact}</div>
                 </div>
               </div>
 
