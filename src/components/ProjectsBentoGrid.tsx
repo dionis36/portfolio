@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { ArrowUpRight, Check, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { ArrowUpRight, Check, ChevronDown, ChevronUp, Globe, Sparkles } from "lucide-react";
 import TechBadge from "./TechBadge";
 
 // Custom Github Icon Component
@@ -33,6 +33,89 @@ interface Project {
   isFeatured: boolean;
 }
 
+function ProjectActionMenu({ project }: { project: Project }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  if (!project.liveUrl) {
+    return (
+      <a
+        href={project.githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="h-7 inline-flex items-center gap-1.5 text-xs font-mono text-gray-600 hover:text-gray-900 active:scale-[0.98] bg-gray-50 hover:bg-gray-100 px-3 rounded-lg border border-gray-200 transition-all shrink-0 font-medium"
+      >
+        <GithubIcon className="w-3.5 h-3.5 text-gray-700 shrink-0" />
+        <span className="translate-y-[0.5px]">View Repository</span>
+        <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 shrink-0" />
+      </a>
+    );
+  }
+
+  return (
+    <div className="relative shrink-0" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`h-7 inline-flex items-center gap-1.5 text-xs font-mono px-3 rounded-lg border transition-all shrink-0 font-medium active:scale-[0.98] ${
+          isOpen
+            ? "bg-gray-100 text-gray-900 border-gray-300 font-semibold"
+            : "bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200"
+        }`}
+      >
+        <Globe className="w-3.5 h-3.5 text-gray-700 shrink-0" />
+        <span className="translate-y-[0.5px]">View Options</span>
+        <ChevronDown className={`w-3.5 h-3.5 text-gray-500 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      {isOpen && (
+        <div className="absolute right-0 mt-1.5 w-52 bg-white rounded-xl shadow-lg border border-gray-200 py-1 z-20 font-mono text-xs animate-in fade-in zoom-in-95 duration-100">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="h-8 inline-flex items-center justify-between w-full px-3.5 text-gray-900 hover:bg-gray-50 transition-colors font-semibold border-b border-gray-100"
+          >
+            <div className="inline-flex items-center gap-2">
+              <Globe className="w-3.5 h-3.5 text-gray-800 shrink-0" />
+              <span className="translate-y-[0.5px]">View Live App</span>
+            </div>
+            <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+          </a>
+
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="h-8 inline-flex items-center justify-between w-full px-3.5 text-gray-700 hover:bg-gray-50 transition-colors font-medium"
+          >
+            <div className="inline-flex items-center gap-2">
+              <GithubIcon className="w-3.5 h-3.5 text-gray-600 shrink-0" />
+              <span className="translate-y-[0.5px]">View Repository</span>
+            </div>
+            <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ProjectsBentoGrid() {
   const [activeTab, setActiveTab] = useState<"all" | "ai-systems" | "web" | "fullstack-mobile">("all");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -40,26 +123,51 @@ export default function ProjectsBentoGrid() {
   const projects: Project[] = [
     {
       id: "plaqode-platform",
-      title: "Plaqode — High-Performance Digital Identity Monorepo",
+      title: "Plaqode — Distributed Monorepo Architecture for Digital Identity & QR Solutions",
       category: "web",
       categoryLabel: "Monorepo Architecture",
-      tagline: "Turborepo-orchestrated QR & business card ecosystem with stateless RS256 auth",
+      tagline: "Turborepo-orchestrated multi-tenant SaaS with stateless RS256 auth & isolated Prisma clients",
       description:
-        "Plaqode is a distributed monorepo powering digital QR code generation, business card creation, and event ticketing. Built with Next.js 14/15, Fastify, and Turborepo, it implements stateless RS256 JWT authentication with isolated Prisma clients per service to prevent schema bottlenecks across an 8-app ecosystem.",
+        "Plaqode is a distributed monorepo powering a digital connectivity suite: QR code generation with geospatial analytics (GeoIP tracking), digital business card creation (Cardify), event ticketing (Marquee), and a unified SSO layer. Built with Next.js 14/15, Fastify, and Turborepo, it implements stateless RS256 JWT authentication with isolated PostgreSQL database schemas via Neon.",
       props: {
         role: "Lead Systems Architect",
-        scope: "8-App Distributed System",
-        architecture: "Turborepo Monorepo",
+        scope: "8-App Distributed Monorepo",
+        architecture: "Turborepo + Isolated Prisma",
         impact: "RS256 Zero-Latency Auth",
       },
-      badges: ["Next.js 14/15", "Fastify", "Turborepo", "TypeScript", "Prisma ORM", "RS256 JWTs"],
+      badges: ["Turborepo", "Next.js 14/15", "Fastify", "TypeScript", "Prisma ORM", "Neon PostgreSQL", "RS256 JWTs"],
       highlights: [
-        "Stateless RS256 authentication with zero-latency asymmetric cryptographic verification",
-        "Isolated database strategy with independent Prisma schemas per service on Neon Postgres",
-        "Turborepo remote caching ensuring zero redundant builds across 8 integrated applications",
+        "Stateless RS256 authentication: Fastify Auth Service signs tokens with private keypair; frontends verify independently using public key to eliminate cross-service network calls during session validation.",
+        "Turborepo build optimization: Orchestrated 20-concurrent task execution with persistent caching across 8 apps, eliminating redundant builds via strict build artifact scoping.",
+        "Isolated database strategy: Independent Prisma schemas per service on Neon PostgreSQL to eliminate monolithic data coupling and prevent schema migration locks.",
+        "High-performance QR engine & analytics: Sharp image processing with GeoIP-lite tracking on denormalized Scan schemas, delivering sub-100ms analytical query response times.",
       ],
       githubUrl: "https://github.com/dionis36/plaqode-platform",
       liveUrl: "https://plaqode.com",
+      isFeatured: true,
+    },
+    {
+      id: "pataspace",
+      title: "PataSpace — Real Estate FinTech & Verified Rental Platform",
+      category: "fullstack-mobile",
+      categoryLabel: "Django & FinTech",
+      tagline: "Django 5 + React + Flutter ecosystem with mobile money escrow & geospatial verification",
+      description:
+        "PataSpace is a full-stack real estate marketplace and fintech platform engineered for high-density urban rental markets like Dar es Salaam. Built with Django 5.0, React 18, and Flutter, it integrates M-Pesa/Tigo Pesa mobile money escrow to enable 'Rent Now, Pay Monthly' financing, Africa's Talking SMS pipelines, Leaflet marker clustering, and field-agent GPS photo verification.",
+      props: {
+        role: "Full-Stack FinTech Dev",
+        scope: "Dar es Salaam Urban Rental",
+        architecture: "Django 5 + React + Flutter",
+        impact: "M-Pesa 'Rent Now Pay Monthly'",
+      },
+      badges: ["Django 5.0", "React 18", "Flutter", "PostgreSQL", "M-Pesa / SMS", "Leaflet Maps", "Oracle Cloud OCI"],
+      highlights: [
+        "FinTech Mobile Money Escrow Layer: Enables 'Rent Now, Pay Monthly' financing via M-Pesa & Tigo Pesa APIs",
+        "Geospatial Field Verification System: Leaflet marker clustering paired with field-agent GPS photo auditing",
+        "Cloud VM Deployment: Multi-container production deployment on Oracle Cloud Infrastructure (OCI) using Nginx, Gunicorn, and WhiteNoise",
+      ],
+      githubUrl: "https://github.com/dionis36/propms-backend",
+      liveUrl: "http://152-70-20-172.nip.io/",
       isFeatured: true,
     },
     {
@@ -132,7 +240,7 @@ export default function ProjectsBentoGrid() {
       ],
       githubUrl: "https://github.com/dionis36/raven",
       liveUrl: "",
-      isFeatured: true,
+      isFeatured: false,
     },
     {
       id: "udsm-journal-portal",
@@ -179,30 +287,6 @@ export default function ProjectsBentoGrid() {
         "OpenAPI Swagger UI integration paired with pre-configured Postman collection workflows",
       ],
       githubUrl: "https://github.com/dionis36/dispatch",
-      liveUrl: "",
-      isFeatured: false,
-    },
-    {
-      id: "pataspace",
-      title: "PataSpace — Real Estate FinTech & Verified Rental Platform",
-      category: "fullstack-mobile",
-      categoryLabel: "Django & FinTech",
-      tagline: "Django 5 + React + Flutter ecosystem with mobile money escrow & geospatial verification",
-      description:
-        "PataSpace is a full-stack real estate marketplace and fintech platform engineered for high-density urban rental markets like Dar es Salaam. Built with Django 5.0, React 18 (Redux Toolkit), and Flutter, it integrates M-Pesa/Tigo Pesa mobile money escrow to enable 'Rent Now, Pay Monthly' financing, Africa's Talking SMS pipelines, Leaflet marker clustering, and field-agent GPS photo verification.",
-      props: {
-        role: "Full-Stack FinTech Dev",
-        scope: "Dar es Salaam Urban Rental",
-        architecture: "Django 5 + React + Flutter",
-        impact: "M-Pesa 'Rent Now Pay Monthly'",
-      },
-      badges: ["Django 5.0", "React 18", "Flutter", "PostgreSQL", "M-Pesa / SMS", "Leaflet Maps"],
-      highlights: [
-        "FinTech Mobile Money Escrow Layer: Enables 'Rent Now, Pay Monthly' financing via M-Pesa & Tigo Pesa APIs",
-        "Geospatial Field Verification System: Leaflet marker clustering paired with field-agent GPS photo auditing",
-        "Multi-Channel Alert Infrastructure: Africa's Talking SMS API integration for push notifications & price tracking",
-      ],
-      githubUrl: "https://github.com/dionis36/propms-backend",
       liveUrl: "",
       isFeatured: false,
     },
@@ -295,16 +379,7 @@ export default function ProjectsBentoGrid() {
                   {project.categoryLabel}
                 </span>
 
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs font-mono text-gray-600 hover:text-gray-900 active:scale-[0.98] bg-gray-50 hover:bg-gray-100 px-3 py-1 rounded-lg border border-gray-200 transition-all shrink-0"
-                >
-                  <GithubIcon className="w-4 h-4 text-gray-700" />
-                  <span>View Repository</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900" />
-                </a>
+                <ProjectActionMenu project={project} />
               </div>
 
               {/* Title & Tagline */}
