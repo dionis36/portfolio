@@ -57,8 +57,8 @@ export default function CertificationsSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono tabular-nums font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-800 border border-gray-200">
-                    {cert.grade}
+                  <span className="h-5 inline-flex items-center justify-center text-[11px] font-mono tabular-nums font-medium px-2.5 rounded-full bg-gray-100 text-gray-800 border border-gray-200 shrink-0">
+                    <span className="translate-y-[0.5px]">{cert.grade}</span>
                   </span>
                   <span className="text-xs font-mono tabular-nums text-gray-500">
                     {cert.date}
@@ -83,14 +83,14 @@ export default function CertificationsSection() {
                   href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pt-4 mt-6 border-t border-gray-100 text-[11px] font-mono text-gray-500 hover:text-gray-900 flex items-center justify-between group/link transition-colors"
+                  className="pt-4 mt-6 border-t border-gray-100 text-[11px] font-mono text-gray-500 hover:text-gray-900 inline-flex items-center justify-between w-full group/link transition-colors"
                 >
-                  <span>Verify Credential</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover/link:text-gray-900 transition-colors" />
+                  <span className="translate-y-[0.5px]">Verify Credential</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover/link:text-gray-900 shrink-0 transition-colors" />
                 </a>
               ) : (
                 <div className="pt-4 mt-6 border-t border-gray-100 text-[11px] font-mono text-gray-500">
-                  Academic Degree
+                  <span className="translate-y-[0.5px] inline-block">Academic Degree</span>
                 </div>
               )}
             </div>

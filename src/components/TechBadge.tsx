@@ -282,10 +282,10 @@ const TechIcon = ({ name }: { name: string }) => {
 export default function TechBadge({ name, className = "" }: TechBadgeProps) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 pt-1.5 pb-1 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/80 hover:border-gray-300 hover:text-gray-900 transition-colors font-mono text-[11px] leading-none tabular-nums ${className}`}
+      className={`h-6 inline-flex items-center gap-1.5 px-2.5 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/80 hover:border-gray-300 hover:text-gray-900 transition-colors font-mono text-[11px] tabular-nums shrink-0 ${className}`}
     >
       <TechIcon name={name} />
-      <span>{name}</span>
+      <span className="translate-y-[0.5px]">{name}</span>
     </span>
   );
 }

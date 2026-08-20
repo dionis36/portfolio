@@ -62,25 +62,25 @@ export default function HeroSection({ onShowToast }: HeroProps) {
           <a
             href="/DIONIS_NASUWA_CV.pdf"
             download
-            className="btn-editorial-liquid flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm shadow-xs"
+            className="btn-editorial-liquid h-10 inline-flex items-center gap-2 px-5 rounded-xl font-medium text-sm shadow-xs"
           >
-            <Download className="w-4 h-4" />
-            <span>Download Resume (PDF)</span>
+            <Download className="w-4 h-4 shrink-0" />
+            <span className="translate-y-[0.5px]">Download Resume (PDF)</span>
           </a>
 
           <button
             onClick={copyEmail}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs"
+            className="h-9 inline-flex items-center gap-2 px-4 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs cursor-pointer"
           >
             {copied ? (
               <>
                 <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span className="text-emerald-700 font-mono">Email Copied!</span>
+                <span className="text-emerald-700 font-mono translate-y-[0.5px]">Email Copied!</span>
               </>
             ) : (
               <>
                 <Mail className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
-                <span>nasuwadio36@gmail.com</span>
+                <span className="translate-y-[0.5px]">nasuwadio36@gmail.com</span>
               </>
             )}
           </button>
@@ -89,11 +89,11 @@ export default function HeroSection({ onShowToast }: HeroProps) {
             href="https://wa.me/255719231593"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs"
+            className="h-9 inline-flex items-center gap-1.5 px-4 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs"
           >
             <MessageSquare className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
-            <span>WhatsApp</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 transition-colors" />
+            <span className="translate-y-[0.5px]">WhatsApp</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-900 shrink-0 transition-colors" />
           </a>
         </div>
       </div>

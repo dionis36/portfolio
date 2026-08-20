@@ -140,30 +140,30 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
                   href="https://github.com/dionis36"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 py-2.5 sm:px-3 sm:py-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group min-w-0"
+                  className="h-10 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group min-w-0"
                 >
                   <GithubIcon className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
-                  <span className="truncate">GitHub</span>
+                  <span className="truncate translate-y-[0.5px]">GitHub</span>
                 </a>
 
                 <a
                   href="https://linkedin.com/in/dionis-nasuwa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 py-2.5 sm:px-3 sm:py-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group min-w-0"
+                  className="h-10 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group min-w-0"
                 >
                   <LinkedinIcon className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
-                  <span className="truncate">LinkedIn</span>
+                  <span className="truncate translate-y-[0.5px]">LinkedIn</span>
                 </a>
 
                 <a
                   href="https://www.instagram.com/i.t.s_d.i.o/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1.5 sm:gap-2 px-2 py-2.5 sm:px-3 sm:py-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group min-w-0"
+                  className="h-10 inline-flex items-center justify-center gap-1.5 sm:gap-2 px-2 sm:px-3 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 text-gray-800 text-xs font-mono font-medium transition-all group min-w-0"
                 >
                   <InstagramIcon className="w-4 h-4 text-gray-500 group-hover:text-gray-900 shrink-0 transition-colors" />
-                  <span className="truncate">Instagram</span>
+                  <span className="truncate translate-y-[0.5px]">Instagram</span>
                 </a>
               </div>
             </div>

@@ -375,8 +375,8 @@ export default function ProjectsBentoGrid() {
             >
               {/* Top Header Row */}
               <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 mb-4 pb-3 border-b border-gray-100">
-                <span className="inline-flex items-center justify-center text-[11px] font-mono leading-none px-3 pt-1.5 pb-1 rounded-full bg-gray-100 text-gray-800 border border-gray-200 font-medium">
-                  {project.categoryLabel}
+                <span className="h-5 inline-flex items-center justify-center text-[11px] font-mono px-3 rounded-full bg-gray-100 text-gray-800 border border-gray-200 font-medium shrink-0">
+                  <span className="translate-y-[0.5px]">{project.categoryLabel}</span>
                 </span>
 
                 <ProjectActionMenu project={project} />

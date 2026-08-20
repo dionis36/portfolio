@@ -112,12 +112,12 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
         <div className="hidden sm:flex items-center gap-2">
           <button
             onClick={onOpenCmd}
-            className="flex items-center gap-1.5 text-xs text-gray-600 bg-white/80 backdrop-blur-xs border border-gray-200 hover:border-gray-300 hover:text-gray-900 px-3 py-1.5 rounded-lg transition-all shadow-2xs font-mono cursor-pointer"
+            className="h-7 inline-flex items-center gap-1.5 text-xs text-gray-600 bg-white/80 backdrop-blur-xs border border-gray-200 hover:border-gray-300 hover:text-gray-900 px-3 rounded-lg transition-all shadow-2xs font-mono cursor-pointer"
             title="Press Cmd + K to search"
           >
-            <Search className="w-3.5 h-3.5 text-gray-500" />
-            <span>Search</span>
-            <kbd className="inline-flex items-center justify-center text-[10px] font-mono leading-none bg-gray-100/90 px-1.5 pt-1 pb-0.5 rounded text-gray-500 border border-gray-200/80">
+            <Search className="w-3.5 h-3.5 text-gray-500 shrink-0" />
+            <span className="translate-y-[1.5px]">Search</span>
+            <kbd className="h-4 inline-flex items-center justify-center text-[10px] font-mono bg-gray-100/90 px-1.5 rounded text-gray-500 border border-gray-200/80 translate-y-[0.5px]">
               ⌘K
             </kbd>
           </button>
@@ -125,10 +125,10 @@ export default function Navbar({ onOpenCmd }: NavbarProps) {
           <a
             href="/DIONIS_NASUWA_CV.pdf"
             download
-            className="btn-editorial-liquid flex items-center gap-2 text-xs font-medium px-3.5 py-1.5 rounded-lg shadow-2xs"
+            className="btn-editorial-liquid h-7 inline-flex items-center gap-2 text-xs font-medium px-3.5 rounded-lg shadow-2xs"
           >
-            <Download className="w-3.5 h-3.5" />
-            <span>Resume (PDF)</span>
+            <Download className="w-3.5 h-3.5 shrink-0" />
+            <span className="translate-y-[0.5px]">Resume (PDF)</span>
           </a>
         </div>
 
