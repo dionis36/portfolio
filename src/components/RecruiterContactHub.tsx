@@ -95,7 +95,7 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {/* WhatsApp Direct */}
                 <a
-                  href="https://wa.me/255719231593"
+                  href="https://wa.me/255620796031"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-3.5 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 transition-all group"
@@ -105,7 +105,7 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
                     <div className="min-w-0">
                       <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">WhatsApp</div>
                       <div className="text-xs font-semibold text-gray-900 truncate">
-                        +255 719 231 593
+                        +255 620 796 031
                       </div>
                     </div>
                   </div>
@@ -116,7 +116,7 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
 
                 {/* Phone Direct */}
                 <a
-                  href="tel:+255754794174"
+                  href="tel:+255620796031"
                   className="flex items-center justify-between p-3.5 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-300 transition-all group"
                 >
                   <div className="flex items-center gap-3 min-w-0">
@@ -124,7 +124,7 @@ export default function RecruiterContactHub({ onShowToast }: ContactProps) {
                     <div className="min-w-0">
                       <div className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Phone Call</div>
                       <div className="text-xs font-semibold text-gray-900 truncate">
-                        +255 754 794 174
+                        +255 620 796 031
                       </div>
                     </div>
                   </div>

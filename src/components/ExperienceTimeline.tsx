@@ -8,8 +8,8 @@ export default function ExperienceTimeline() {
   const experiences = [
     {
       role: "Data Analyst",
-      company: "Halotel HQ",
-      location: "Dar es Salaam, Tanzania",
+      company: "Halotel (Viettel Tanzania Plc)",
+      location: "Dar es Salaam, Tanzania (Headquarters)",
       period: "Sept 2026 – Present",
       bullets: [
         "Researching and evaluating enterprise data architectures (OracleDB, PostgreSQL) to design scalable business intelligence pipelines.",

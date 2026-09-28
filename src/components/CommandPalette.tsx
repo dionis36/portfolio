@@ -85,9 +85,9 @@ export default function CommandPalette({
     {
       id: "copy-phone",
       category: "Contact Actions",
-      label: "Copy WhatsApp (+255 719 231 593)",
+      label: "Copy WhatsApp (+255 620 796 031)",
       icon: Phone,
-      action: () => copyText("+255719231593", "WhatsApp Number", "copy-phone"),
+      action: () => copyText("+255620796031", "WhatsApp Number", "copy-phone"),
     },
     {
       id: "download-cv",

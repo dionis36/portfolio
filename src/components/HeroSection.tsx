@@ -68,7 +68,7 @@ export default function HeroSection({ onShowToast }: HeroProps) {
           </button>
 
           <a
-            href="https://wa.me/255719231593"
+            href="https://wa.me/255620796031"
             target="_blank"
             rel="noopener noreferrer"
             className="h-9 inline-flex items-center gap-1.5 px-4 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 hover:text-gray-900 active:scale-[0.98] text-xs font-mono transition-all group shadow-2xs"
