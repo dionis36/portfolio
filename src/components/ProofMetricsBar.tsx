@@ -54,7 +54,7 @@ export default function ProofMetricsBar() {
                 </span>
 
                 {/* Primary Metric Headline */}
-                <div className="text-base font-bold text-gray-900 tracking-tight leading-snug mb-1">
+                <div className="text-lg sm:text-xl font-bold text-gray-900 tracking-tight leading-snug mb-1">
                   {m.value}
                 </div>
 

@@ -91,7 +91,7 @@ export default function CertificationsSection() {
                   {cert.issuer}
                 </div>
 
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {cert.description}
                 </p>
               </div>
