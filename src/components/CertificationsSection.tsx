@@ -6,6 +6,24 @@ import { ExternalLink } from "lucide-react";
 export default function CertificationsSection() {
   const certs = [
     {
+      title: "Data Analytics Essentials",
+      issuer: "Cisco Networking Academy",
+      date: "Sept 2026",
+      grade: "Professional Certification",
+      description:
+        "Comprehensive certification in data manipulation, visualization, and analytics fundamentals using modern tools and techniques.",
+      url: "https://www.netacad.com/recognitions/verify/6aa25a13-b845-41e9-b101-67fff6e4a3e8",
+    },
+    {
+      title: "GDPR Foundations",
+      issuer: "Measured Collective",
+      date: "Sept 2026",
+      grade: "Compliance Certification",
+      description:
+        "Foundational understanding of General Data Protection Regulation (GDPR), focusing on data privacy, security, and regulatory compliance.",
+      url: "/Certificate - GDPR Foundations.pdf",
+    },
+    {
       title: "Full Stack Open Certification",
       issuer: "University of Helsinki",
       date: "July 2026",

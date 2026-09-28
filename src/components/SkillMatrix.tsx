@@ -1,11 +1,24 @@
 "use client";
 
 import React from "react";
-import { Code2, Server, Network, Terminal } from "lucide-react";
+import { Code2, Server, Network, Terminal, LineChart } from "lucide-react";
 import TechBadge from "./TechBadge";
 
 export default function SkillMatrix() {
   const categories = [
+    {
+      title: "Data Science & Analytics",
+      icon: LineChart,
+      skills: [
+        "Python",
+        "SQL",
+        "Tableau",
+        "PostgreSQL",
+        "DuckDB",
+        "Apache Superset",
+        "Data Modeling",
+      ],
+    },
     {
       title: "Programming & Web Stack",
       icon: Code2,

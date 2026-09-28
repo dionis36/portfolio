@@ -7,6 +7,18 @@ import TechBadge from "./TechBadge";
 export default function ExperienceTimeline() {
   const experiences = [
     {
+      role: "Data Analyst",
+      company: "Halotel HQ",
+      location: "Dar es Salaam, Tanzania",
+      period: "Sept 2026 – Present",
+      bullets: [
+        "Researching and evaluating enterprise data architectures (OracleDB, PostgreSQL) to design scalable business intelligence pipelines.",
+        "Conducting independent study and application of advanced data manipulation using SQL, Python, and DuckDB.",
+        "Preparing data visualization workflows using Tableau and Apache Superset for telecommunications data.",
+      ],
+      tags: ["Data Analytics", "SQL", "Python", "Data Infrastructure"],
+    },
+    {
       role: "Software Engineering Collaborator",
       company: "Mainstream Group (Technology Division)",
       location: "Dar es Salaam, Tanzania",

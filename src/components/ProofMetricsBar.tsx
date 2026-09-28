@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Award, Briefcase, Code, Terminal } from "lucide-react";
+import { Award, Briefcase, Code, Database } from "lucide-react";
 
 export default function ProofMetricsBar() {
   const metrics = [
@@ -14,8 +14,8 @@ export default function ProofMetricsBar() {
     },
     {
       label: "Industry Experience",
-      value: "3 Traineeships",
-      subtext: "Mainstream Group, StartHub Africa, TPC Ltd",
+      value: "Data & Engineering",
+      subtext: "Halotel HQ, Mainstream Group, StartHub Africa",
       icon: Briefcase,
       link: null,
     },
@@ -27,11 +27,11 @@ export default function ProofMetricsBar() {
       link: null,
     },
     {
-      label: "Agile Project Mgmt",
-      value: "SFC™ Certified",
-      subtext: "SCRUMstudy sprint & delivery validation",
-      icon: Terminal,
-      link: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1176426",
+      label: "Analytics & Compliance",
+      value: "Cisco & GDPR Certified",
+      subtext: "Mastery in Data Analytics Essentials & Data Privacy (GDPR)",
+      icon: Database,
+      link: null,
     },
   ];
 

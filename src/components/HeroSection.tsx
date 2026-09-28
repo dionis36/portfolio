@@ -31,29 +31,11 @@ export default function HeroSection({ onShowToast }: HeroProps) {
           </h1>
 
           <p className="text-xl sm:text-2xl font-medium text-gray-700 tracking-tight">
-            Full-Stack Software Engineer & Systems Architect
+            Software Engineer & Data Analyst
           </p>
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed pt-2 mb-8">
-            BSc in Computer Science graduate from the <strong className="text-gray-900 font-semibold">University of Dar es Salaam (UDSM)</strong>. Certified in{" "}
-            <a
-              href="https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/f6f8b813200d909c8b20ee73c015446d"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-900 font-semibold underline underline-offset-4 decoration-gray-300 hover:decoration-gray-900 transition-colors"
-            >
-              Full Stack Open (University of Helsinki, Grade 5/5)
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://www.scrumstudy.com/certification/verify?type=SFC&number=1176426"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-900 font-semibold underline underline-offset-4 decoration-gray-300 hover:decoration-gray-900 transition-colors"
-            >
-              Scrum Fundamentals (SFC™)
-            </a>
-            . Specialized in engineering scalable full-stack web applications, TypeScript monorepos, AST code analysis engines, and enterprise network infrastructure.
+            BSc in Computer Science graduate from the <strong className="text-gray-900 font-semibold">University of Dar es Salaam (UDSM)</strong> with a strong foundation in systems architecture. Currently operating at the intersection of software engineering and data analytics to build enterprise-scale solutions. Passionate about advancing my expertise through graduate-level research in Data Science and Software Engineering.
           </p>
         </div>
 
