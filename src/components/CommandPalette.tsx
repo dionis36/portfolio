@@ -112,7 +112,7 @@ export default function CommandPalette({
     {
       id: "nav-experience",
       category: "Navigation",
-      label: "Jump to Work Experience (Mainstream Group, StartHub, TPC)",
+      label: "Jump to Work Experience (Halotel, Mainstream Group, StartHub, TPC)",
       icon: Briefcase,
       action: () => {
         document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
@@ -122,7 +122,7 @@ export default function CommandPalette({
     {
       id: "nav-skills",
       category: "Navigation",
-      label: "Jump to Skills Matrix",
+      label: "Jump to Skills Matrix (Data Science, SQL, Python, TypeScript)",
       icon: Cpu,
       action: () => {
         document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
@@ -132,10 +132,38 @@ export default function CommandPalette({
     {
       id: "nav-certifications",
       category: "Navigation",
-      label: "Jump to Certifications (Helsinki 5/5 & Scrum SFC)",
+      label: "Jump to Certifications (Cisco Data, GDPR, Helsinki 5/5)",
       icon: GraduationCap,
       action: () => {
         document.getElementById("certifications")?.scrollIntoView({ behavior: "smooth" });
+        onClose();
+      },
+    },
+    {
+      id: "verify-cisco",
+      category: "Verify Credentials",
+      label: "Verify Cisco Data Analytics Essentials",
+      icon: GraduationCap,
+      action: () => {
+        window.open(
+          "https://www.netacad.com/recognitions/verify/6aa25a13-b845-41e9-b101-67fff6e4a3e8",
+          "_blank",
+          "noopener,noreferrer"
+        );
+        onClose();
+      },
+    },
+    {
+      id: "verify-gdpr",
+      category: "Verify Credentials",
+      label: "Verify GDPR Foundations Certificate",
+      icon: GraduationCap,
+      action: () => {
+        window.open(
+          "/Certificate - GDPR Foundations.pdf",
+          "_blank",
+          "noopener,noreferrer"
+        );
         onClose();
       },
     },
