@@ -40,6 +40,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-
+# supporting personal docs
 /info
 /masters
+
+/PLAN.md
+/LOGS.md
+/PATTERNS.md
+/MASTER_DOSSIER.md

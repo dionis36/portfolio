@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  
+  --color-canvas: #fbfbfb;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f4f4f4;
+  --color-surface-hover: #e8e8e8;
+
+  --color-border: #e8e8e8;
+  --color-border-subtle: #f4f4f4;
+
+  --color-primary: #141414;
+  --color-secondary: #404040;
+  --color-muted: #666666;
+  --color-faint: #8d8d8d;
+}
+
+:root {
+  --color-canvas: #fbfbfb;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f4f4f4;
+  --color-surface-hover: #e8e8e8;
+  --color-border: #e8e8e8;
+  --color-border-subtle: #f4f4f4;
+  --color-primary: #141414;
+  --color-secondary: #404040;
+  --color-muted: #666666;
+  --color-faint: #8d8d8d;
+}
+
+/* Base Body Styling */
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-primary);
+  font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Micro-interaction: Animated Arrow on Link Hover */
+.group:hover .arrow-icon-shift {
+  transform: translateX(4px);
+}
+
+/* Interactive Transition Defaults */
+a, button {
+  transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle Architectural Text Link Underline */
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-link:hover {
+  text-decoration-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Mobile Touch UX: Prevent Sticky Hover Effects on Touchscreens */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:border-primary:hover {
+    border-color: var(--color-border-subtle) !important;
+  }
+  .hover\:scale-\[0\.99\]:hover {
+    transform: none !important;
+  }
+  .group:hover [class*="scale-"] {
+    transform: none !important;
+  }
+  .group:hover [class*="translate-x"] {
+    transform: none !important;
+  }
+  .hover\:shadow-\[0_10px_30px_rgba\(0\,0\,0\,0\.06\)\]:hover {
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.02) !important;
+  }
+}
+
+
