@@ -38,7 +38,7 @@ export const profile: ProfileData = {
     "My professional experience has moved between infrastructure, software, and data. At TPC Limited, the work was in enterprise networking: switches, static IP bindings, routers, and hardware issues across departmental terminals. At UDICTI and StartHub Africa, the work moved to software development, where I contributed to the Smart Cargo delivery app built with Flutter and a Django backend. At Mainstream Group, the focus was backend work: REST API integrations and data flows in TypeScript for multi-module applications. I now work as a Data Analyst at Halotel, where the work involves SQL, PostgreSQL, Oracle, and Tableau dashboards for operational reporting.",
     "Outside work, I build projects that test ideas outside my current role. PaySim analyzed 6.3 million synthetic mobile money transactions in PostgreSQL, with SQL queries, window functions, and a three-tab Tableau dashboard. Plaqode and Paydable are backend-heavy systems: a nine-app Turborepo monorepo with RS256 authentication, and a payment system built around PostgreSQL advisory locks and webhook retries. Strata, INTLEQ, and Raven explore code structure, local retrieval, and command-line tooling. Each project forced a decision about how the data or the system should work. I am now preparing for a master's in data science, with an interest in statistical methods, machine learning, and applied research.",
   ],
-  avatar: "/dio.png",
+  avatar: "/dio.jpg",
   portrait: "/images/about-img.jpeg",
   email: "nasuwadio36@gmail.com",
 };

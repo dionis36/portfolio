@@ -37,7 +37,7 @@ export const experiences: ExperienceItem[] = [
   {
     id: "exp-2",
     company: "Mainstream Group",
-    role: "Software Engineering Collaborator",
+    role: "Software Engineering Intern",
     period: "Mar 2026 - May 2026",
     description:
       "Worked with the team on backend services for multi-module applications. The role involved REST API integrations and data flows in TypeScript. Most of the work was understanding an existing codebase, tracing how data moved through it, and making changes without breaking existing parts.",
