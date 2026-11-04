@@ -61,7 +61,16 @@ export default function ContactForm() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10">
+            <>
+              <div className="mb-8 pb-6 border-b border-border-subtle">
+                <h2 className="text-xl sm:text-2xl font-medium text-primary mb-2">
+                  Send a message
+                </h2>
+                <p className="text-muted text-sm leading-relaxed">
+                  Fill out the fields below for project inquiries, collaboration proposals, or technical consultations.
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 sm:gap-y-10">
                 {/* Name */}
                 <div>
@@ -179,7 +188,8 @@ export default function ContactForm() {
                 </button>
               </div>
             </form>
-          )}
+          </>
+        )}
         </div>
       </div>
     </section>

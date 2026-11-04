@@ -8,20 +8,29 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Instagram: Icons.Instagram,
   WhatsApp: Icons.WhatsApp,
   Email: Icons.Mail,
+  Phone: Icons.Phone,
   Facebook: Icons.Facebook,
   Twitter: Icons.Twitter,
 };
 
-export default function SocialSection() {
+interface SocialSectionProps {
+  title?: string;
+  items?: typeof socialLinks;
+}
+
+export default function SocialSection({
+  title = "Connect & direct channels",
+  items = socialLinks,
+}: SocialSectionProps) {
   return (
     <section>
       <div className="max-w-[960px] mx-auto px-6 py-12 sm:py-16 border-t border-border">
         <h2 className="text-2xl sm:text-[26px] font-medium leading-[1.38] text-primary mb-8">
-          Follow me on social media
+          {title}
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-          {socialLinks.map((item) => {
+          {items.map((item) => {
             const Icon = iconMap[item.name] || Icons.ArrowRight;
             return (
               <a

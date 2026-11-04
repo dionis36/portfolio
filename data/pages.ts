@@ -43,7 +43,7 @@ export const pagesConfig: PagesConfig = {
   contact: {
     title: "Contact",
     subtitle:
-      "For data analysis, software development, or research collaborations, send a message or use the contact details below.",
+      "For data analysis, software development, or research collaborations, reach out through the direct channels below.",
     seoDescription:
       "Contact Dionis Ludovick Nasuwa for data analysis, software development, or research collaborations.",
   },

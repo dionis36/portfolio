@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FileText, ArrowUpRight } from "lucide-react";
 import ArrowLink from "../ui/ArrowLink";
 import { profile } from "@/data/profile";
 
@@ -32,7 +33,19 @@ export default function HeroSection() {
               {profile.heroBio}
             </p>
 
-            <ArrowLink href="/contact">Contact me</ArrowLink>
+            <div className="flex flex-wrap items-center gap-5 sm:gap-6">
+              <a
+                href="/DIONIS_NASUWA_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-hover border border-border text-primary text-sm font-medium hover:bg-[#dedede] transition-all duration-200 shadow-[0_2px_8px_0_rgba(0,0,0,0.02)] active:scale-[0.98]"
+              >
+                <FileText className="w-4 h-4 text-muted group-hover:text-primary transition-colors" strokeWidth={1.65} />
+                <span>Download CV</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-muted group-hover:text-primary transition-colors transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-200" />
+              </a>
+              <ArrowLink href="/contact">Contact me</ArrowLink>
+            </div>
           </div>
         </div>
       </div>

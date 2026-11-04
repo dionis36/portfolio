@@ -5,6 +5,7 @@ import {
   BookOpen as LucideBookOpen,
   Folder as LucideFolder,
   Mail as LucideMail,
+  Phone as LucidePhone,
   Grid3X3 as LucideGrid3X3,
   X as LucideX,
   ArrowRight as LucideArrowRight,
@@ -42,6 +43,11 @@ export const Icons = {
   // Dock: Contact (Mail / Envelope)
   Mail: ({ className = "w-5 h-5", strokeWidth = 1.6, ...props }: IconProps) => (
     <LucideMail className={className} strokeWidth={strokeWidth} {...props} />
+  ),
+
+  // Direct Phone / Call
+  Phone: ({ className = "w-4 h-4", strokeWidth = 1.6, ...props }: IconProps) => (
+    <LucidePhone className={className} strokeWidth={strokeWidth} {...props} />
   ),
 
   // Dock: Menu Grid (Smoothed 9-Dot Grid)

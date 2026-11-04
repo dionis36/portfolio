@@ -4,6 +4,7 @@ export type SocialPlatform =
   | "Instagram"
   | "WhatsApp"
   | "Email"
+  | "Phone"
   | "Facebook"
   | "Twitter";
 
@@ -23,4 +24,5 @@ export const socialLinks: SocialLink[] = [
   { name: "Instagram", href: "https://www.instagram.com/i.t.s_d.i.o/" },
   { name: "WhatsApp", href: "https://wa.me/255620796031" },
   { name: "Email", href: "mailto:nasuwadio36@gmail.com" },
+  { name: "Phone", href: "tel:+255620796031" },
 ];

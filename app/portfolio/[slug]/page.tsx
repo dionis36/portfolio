@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import ArrowLink from "@/components/ui/ArrowLink";
 import { Icons } from "@/components/ui/Icons";
+import HomeCta from "@/components/home/HomeCta";
+
 
 interface ProjectPageProps {
   params: Promise<{
@@ -38,6 +40,34 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   if (!project) {
     notFound();
+  }
+
+  // Resolve dynamic project links
+  const links: { label: string; url: string }[] = [];
+
+  if (project.tableauUrl) {
+    links.push({ label: "Tableau Dashboard", url: project.tableauUrl });
+  }
+
+  if (
+    project.websiteUrl &&
+    !project.websiteUrl.includes("github.com") &&
+    project.websiteUrl !== project.tableauUrl
+  ) {
+    links.push({ label: "Visit Website", url: project.websiteUrl });
+  } else if (project.liveUrl && project.liveUrl !== project.websiteUrl) {
+    links.push({ label: "Visit Website", url: project.liveUrl });
+  }
+
+  if (project.githubUrl) {
+    links.push({ label: "GitHub Repository", url: project.githubUrl });
+  }
+
+  if (links.length === 0 && project.websiteUrl) {
+    links.push({
+      label: project.websiteUrl.includes("github.com") ? "GitHub Repository" : "Visit Website",
+      url: project.websiteUrl,
+    });
   }
 
   return (
@@ -96,11 +126,24 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
             <div>
               <span className="block text-xs uppercase tracking-wider font-semibold text-faint mb-1">
-                Website
+                {links.length > 1
+                  ? "Links"
+                  : links[0]?.label === "Visit Website"
+                  ? "Website"
+                  : "Repository"}
               </span>
-              <ArrowLink href={project.websiteUrl} isExternal className="text-sm">
-                Visit website
-              </ArrowLink>
+              <div className="flex flex-col gap-1.5">
+                {links.map((link) => (
+                  <ArrowLink
+                    key={link.url}
+                    href={link.url}
+                    isExternal
+                    className="text-sm"
+                  >
+                    {link.label}
+                  </ArrowLink>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -159,23 +202,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       </section>
 
       {/* Bottom CTA Banner Card */}
-      <section className="pt-8">
-        <div className="max-w-[960px] mx-auto px-6">
-          <div className="bg-surface rounded-[24px] border border-border-subtle p-8 sm:p-12 shadow-[0_4px_16px_0_rgba(0,0,0,0.02)] text-center">
-            <h2 className="text-2xl sm:text-[28px] font-medium text-primary mb-3">
-              Get in touch and let’s talk<br className="hidden sm:inline" /> about your project
-            </h2>
-            <p className="text-muted text-sm sm:text-base leading-relaxed max-w-[420px] mx-auto mb-6">
-              Have a product idea or need assistance scaling your design system? Let’s create something great together.
-            </p>
-            <div className="flex justify-center">
-              <ArrowLink href="/contact" className="text-base font-semibold">
-                Contact me
-              </ArrowLink>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeCta />
     </main>
   );
 }

@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/data/projects";
 import { Icons } from "../ui/Icons";
 import ProjectMockupFrame from "./ProjectMockupFrame";
+import ProjectIcon from "./ProjectIcon";
 
 interface PortfolioCardProps {
   project: Project;
@@ -25,13 +25,7 @@ export default function PortfolioCard({
           {/* Info Column */}
           <div className="md:col-span-5 order-2 md:order-1">
             <div className="w-[41px] h-[41px] rounded-xl bg-surface-subtle flex items-center justify-center p-2 mb-4">
-              <Image
-                src={project.icon}
-                alt={project.title}
-                width={24}
-                height={24}
-                className="w-full h-full object-contain"
-              />
+              <ProjectIcon icon={project.icon} title={project.title} />
             </div>
 
             <div className="text-xs font-medium text-faint mb-1">
@@ -80,13 +74,7 @@ export default function PortfolioCard({
       {/* Top Details (with right padding) */}
       <div className="pr-6 sm:pr-7">
         <div className="w-[41px] h-[41px] rounded-xl bg-surface-subtle flex items-center justify-center p-2 mb-4">
-          <Image
-            src={project.icon}
-            alt={project.title}
-            width={24}
-            height={24}
-            className="w-full h-full object-contain"
-          />
+          <ProjectIcon icon={project.icon} title={project.title} />
         </div>
 
         <div className="text-xs font-medium text-faint mb-1">

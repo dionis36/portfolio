@@ -57,15 +57,27 @@ export default function NavModal({ isOpen, onClose }: NavModalProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-focus search input on open & lock scroll
+  // Auto-focus search input on open (desktop fine-pointer only) & lock scroll
   useEffect(() => {
+    let timer: NodeJS.Timeout | undefined;
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
       setSelectedIndex(0);
       setSearch("");
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 50);
+
+      // Only auto-focus on desktop devices with fine pointer (mouse/trackpad) and screen width >= 640px.
+      // On mobile/touch devices, auto-focus forces the virtual keyboard to slide up and obscure navigation cards.
+      const isDesktop =
+        typeof window !== "undefined" &&
+        window.matchMedia("(pointer: fine)").matches &&
+        window.innerWidth >= 640;
+
+      if (isDesktop) {
+        timer = setTimeout(() => {
+          inputRef.current?.focus();
+        }, 50);
+      }
     } else {
       document.body.style.overflow = "";
       setSearch("");
@@ -73,6 +85,7 @@ export default function NavModal({ isOpen, onClose }: NavModalProps) {
     }
     return () => {
       document.body.style.overflow = "";
+      if (timer) clearTimeout(timer);
     };
   }, [isOpen]);
 
