@@ -15,6 +15,7 @@ export const skills: SkillItem[] = [
     badges: [
       "SQL",
       "PostgreSQL",
+      "DuckDB",
       "OracleDB",
       "Tableau",
       "Python",
