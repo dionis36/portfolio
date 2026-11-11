@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dionis Ludovick Nasuwa - Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 8.0mm 10.5mm 8.0mm 10.5mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #111827;
+      background-color: #ffffff;
+      font-size: 8.55pt;
+      line-height: 1.28;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .resume-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1.6px solid #111827;
+      padding-bottom: 4.0px;
+      margin-bottom: 5.5px;
+      text-align: center;
+    }
+
+    h1.name {
+      font-size: 19.5pt;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: #000000;
+      text-transform: uppercase;
+      line-height: 1.02;
+    }
+
+    .headline {
+      font-size: 9.15pt;
+      font-weight: 600;
+      color: #374151;
+      margin-top: 2.5px;
+      letter-spacing: 0.1px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2px 8px;
+      font-size: 8.05pt;
+      color: #4b5563;
+      margin-top: 2.5px;
+    }
+
+    .contact-row span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 5.8px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 8.75pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #111827;
+      border-bottom: 1.1px solid #d1d5db;
+      padding-bottom: 1.2px;
+      margin-bottom: 3.5px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.35pt;
+      color: #374151;
+      line-height: 1.28;
+      text-align: justify;
+    }
+
+    /* Items */
+    .item {
+      margin-bottom: 4.2px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.45pt;
+      line-height: 1.22;
+      margin-bottom: 0.5px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .item-org {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .item-meta {
+      font-size: 7.9pt;
+      font-weight: 600;
+      color: #4b5563;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .project-tech {
+      font-size: 7.75pt;
+      font-weight: 500;
+      color: #4b5563;
+      margin-bottom: 1.2px;
+    }
+
+    /* Bullet Lists */
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0.5px;
+    }
+
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 9.0px;
+      font-size: 8.1pt;
+      color: #374151;
+      line-height: 1.26;
+      margin-bottom: 1.5px;
+    }
+
+    ul.bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #4b5563;
+      font-weight: bold;
+    }
+
+    /* Education & Certifications */
+    .edu-cert-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+
+    .edu-cert-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 8.3pt;
+      line-height: 1.22;
+    }
+
+    .edu-cert-left {
+      color: #374151;
+    }
+
+    .edu-cert-left strong {
+      color: #111827;
+    }
+
+    .edu-cert-right {
+      font-size: 7.85pt;
+      font-weight: 600;
+      color: #4b5563;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .edu-coursework {
+      font-size: 7.75pt;
+      color: #4b5563;
+      margin-top: 1.0px;
+      line-height: 1.22;
+    }
+
+    /* Skills Matrix */
+    .skills-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6px;
+      font-size: 8.05pt;
+      line-height: 1.25;
+    }
+
+    .skills-block > div {
+      color: #374151;
+    }
+
+    .skills-block strong {
+      color: #111827;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+
+    <!-- HEADER -->
+    <header>
+      <h1 class="name">Dionis Ludovick Nasuwa</h1>
+      <div class="headline">Data Analyst &amp; Software Developer | Relational Databases, Fraud Analytics &amp; Systems Infrastructure</div>
+      <div class="contact-row">
+        <span>Dar es Salaam, Tanzania (UTC+3)</span>
+        <span>&bull;</span>
+        <span><a href="mailto:nasuwadio36@gmail.com">nasuwadio36@gmail.com</a></span>
+        <span>&bull;</span>
+        <span>+255 620 796 031</span>
+      </div>
+      <div class="contact-row">
+        <span><strong>Portfolio:</strong>&nbsp;<a href="https://dio.is-a.dev/">dio.is-a.dev</a></span>
+        <span>&bull;</span>
+        <span><strong>GitHub:</strong>&nbsp;<a href="https://github.com/dionis36">github.com/dionis36</a></span>
+        <span>&bull;</span>
+        <span><strong>LinkedIn:</strong>&nbsp;<a href="https://linkedin.com/in/dionis-nasuwa">linkedin.com/in/dionis-nasuwa</a></span>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section>
+      <div class="section-title">Professional Summary</div>
+      <p class="summary-text">Computer Science graduate from the University of Dar es Salaam (CoICT) and Data Analyst at Halotel headquarters. Focuses on querying large relational databases, cleaning operational datasets, detecting transaction anomalies, and delivering clear Tableau reports for management. Uses full-stack software development as a practical foundation to design resilient backend services, automate data pipelines, and maintain strict data integrity standards.</p>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section>
+      <div class="section-title">Education &amp; Certifications</div>
+      <div class="edu-cert-block">
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>BSc in Computer Science</strong>: University of Dar es Salaam (CoICT)
+          </div>
+          <div class="edu-cert-right">2023 - 2026</div>
+        </div>
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>Data Analytics Essentials</strong>: Cisco Networking Academy
+          </div>
+          <div class="edu-cert-right">Sept 2026</div>
+        </div>
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>Full Stack Open Certification (Grade 5/5 Maximum Score)</strong>: University of Helsinki
+          </div>
+          <div class="edu-cert-right">July 2026</div>
+        </div>
+        <div class="edu-cert-row">
+          <div class="edu-cert-left">
+            <strong>GDPR Foundations Certification</strong>: Measured Collective
+          </div>
+          <div class="edu-cert-right">Sept 2026</div>
+        </div>
+        <div class="edu-coursework">
+          <strong>Key Coursework:</strong> Database Management Systems (SQL), Data Structures &amp; Algorithms, Distributed Systems, Operating Systems &amp; Linux Administration, Computer Networks, Systems Programming.
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL WORK EXPERIENCE -->
+    <section>
+      <div class="section-title">Technical Experience</div>
+
+      <!-- Halotel HQ -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Data Analyst (HQ)</span> &bull; 
+            <span class="item-org">Halotel (Viettel Tanzania Plc)</span>
+          </div>
+          <div class="item-meta">Sept 2026 - Present | Dar es Salaam</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Configure and declare Value Added Services (VAS) for SMS shortcodes, querying PostgreSQL and Oracle databases with SQL to audit service delivery logs and resolve routing discrepancies.</li>
+          <li>Provide technical support and written guidance to external corporate partners, monitoring message traffic trends and building Tableau and Excel dashboards for operational reporting.</li>
+        </ul>
+      </div>
+
+      <!-- DigitalOps -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Co-Founder &amp; Technical Consultant</span> &bull; 
+            <span class="item-org">DigitalOps (Independent Consultancy)</span>
+          </div>
+          <div class="item-meta">Jan 2026 - Present | Dar es Salaam</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Architect backend systems and payment integrations for East African commercial clients, using PostgreSQL advisory locks and retry queues to prevent duplicate transaction crediting.</li>
+          <li>Author technical proposals, system specifications, and client reports to guide deployment timelines and operational risk mitigation.</li>
+        </ul>
+      </div>
+
+      <!-- Mainstream Group -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Software Engineering Intern</span> &bull; 
+            <span class="item-org">Mainstream Group (Technology Division)</span>
+          </div>
+          <div class="item-meta">March 2026 - May 2026 | Dar es Salaam</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Engineered modular backend services in TypeScript and Node.js for multi-module applications, optimizing SQL queries to improve data retrieval speeds.</li>
+          <li>Participated in bi-weekly agile sprint reviews, documented API integration specifications, and conducted peer code reviews across release pipelines.</li>
+        </ul>
+      </div>
+
+      <!-- UDICTI -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Software Development Trainee</span> &bull; 
+            <span class="item-org">UDICTI / StartHub Africa Partnership</span>
+          </div>
+          <div class="item-meta">July 2025 - Sept 2025 | Dar es Salaam</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Built cross-platform components for the Smart Cargo delivery application using Flutter, connected to a Django and PostgreSQL backend with bilingual Swahili and English support.</li>
+          <li>Modeled multi-factor pricing calculations in Excel and Python based on distance matrices and weight brackets, presenting milestone reports to project supervisors.</li>
+        </ul>
+      </div>
+
+      <!-- TPC Limited -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">IT Infrastructure Trainee</span> &bull; 
+            <span class="item-org">TPC Limited</span>
+          </div>
+          <div class="item-meta">July 2024 - Sept 2024 | Kilimanjaro</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Configured managed network switches, routers, and static IP bindings to maintain local area network continuity, diagnosing hardware and operating system issues across departmental workstations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SELECTED TECHNICAL PROJECTS -->
+    <section>
+      <div class="section-title">Selected Technical Projects</div>
+
+      <!-- PaySim -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">PaySim Mobile Money Analytics: Financial Fraud Forensics &amp; Dashboarding</span>
+          <span class="item-meta">2026</span>
+        </div>
+        <div class="project-tech">PostgreSQL · SQL · Tableau Public</div>
+        <ul class="bullet-list">
+          <li>Analyzed 6.36 million transaction records in PostgreSQL using CTEs and window functions, discovering that static threshold rules missed 99.8 percent of fraudulent transfers.</li>
+          <li>Published an interactive three-tab dashboard on Tableau Public displaying system volume trends, hourly fraud occurrences, and balance discrepancy heatmaps.</li>
+        </ul>
+      </div>
+
+      <!-- UNHCR Asylum Analytics -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">UNHCR Asylum Analytics: Operations &amp; Backlog Audit</span>
+          <span class="item-meta">2026</span>
+        </div>
+        <div class="project-tech">DuckDB · SQL · Next.js · MapLibre GL · Python</div>
+        <ul class="bullet-list">
+          <li>Audited 33.14 million claims across 186 host countries (2010–2025) using DuckDB and SQL, measuring the gap between incoming applications and decision capacity.</li>
+          <li>Developed an interactive Next.js web application with vector maps and streamgraphs to explore national backlogs, clearance rates, and administrative closures.</li>
+        </ul>
+      </div>
+
+      <!-- Plaqode -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Plaqode Platform: Distributed Monorepo &amp; Identity Architecture</span>
+          <span class="item-meta">2026</span>
+        </div>
+        <div class="project-tech">TypeScript · Next.js · Fastify · Turborepo · PostgreSQL · Docker</div>
+        <ul class="bullet-list">
+          <li>Architected an eight-application Turborepo monorepo with isolated PostgreSQL schemas per service domain, preventing schema coupling across ticketing and identity modules.</li>
+          <li>Designed a stateless RS256 JWT authentication service with Fastify, enabling independent public-key signature verification across client applications.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+      <div class="section-title">Technical Skills &amp; Competencies</div>
+      <div class="skills-block">
+        <div><strong>Data &amp; Analytics:</strong> SQL (PostgreSQL, OracleDB, DuckDB), Tableau, Microsoft Excel (pivot tables, modeling), Python, Data Cleaning, Transaction Fraud Forensics, Database Normalization.</div>
+        <div><strong>Software Engineering:</strong> TypeScript, JavaScript, Node.js, Fastify, React, Next.js, Django, Flutter, RESTful APIs, RS256 Authentication.</div>
+        <div><strong>Infrastructure &amp; Tools:</strong> Docker, Git, Linux (Ubuntu/Debian), PostgreSQL, Redis, Turborepo, Microsoft Office Suite (Word, PowerPoint, Excel).</div>
+        <div><strong>Methodologies &amp; Standards:</strong> Agile/Scrum, Data Governance &amp; Privacy (GDPR), Database Modeling, Code Review, Technical Documentation.</div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

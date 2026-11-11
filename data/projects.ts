@@ -68,9 +68,9 @@ export const projects: Project[] = [
     client: "Independent project",
     title: "UNHCR Asylum Analytics",
     description:
-      "An operational analysis tracking 33.14 million claims across 186 countries using DuckDB, multi-stage SQL, and Next.js.",
+      "An operational audit of 33.14 million asylum claims in DuckDB, tracking backlog accumulation and clearance rates in Next.js.",
     category: "Data Analytics",
-    slug: "unhcr-asylum-operations-analytics",
+    slug: "unhcr-asylum-analytics",
     thumbnail: "/images/unhcr-map.png",
     heroImage: "/images/unhcr-overview.png",
     mockupStyle: "flat",
@@ -83,14 +83,14 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/dionis36/unhcr-asylum-analytics",
     liveUrl: "https://unhcr-asylum-analytics.vercel.app",
     subtitle:
-      "An operational court-capacity analysis tracking 33.14 million claims across 186 sovereign hosts.",
+      "Tracking 33.14 million asylum applications and decision backlogs across 186 countries.",
     aboutProject: [
-      "Public discussions frequently conflate total border arrivals with judicial processing capacity, obscuring the administrative mechanics of asylum adjudication. This project audits 16 consecutive years (2010 through 2025) of UNHCR microdata and annual ledgers across 186 host jurisdictions. The analysis measures the gap between incoming claims and court processing capacity, tracking 33.14 million standardized applications and 26.92 million substantive legal determinations.",
-      "The raw records required resolving significant data engineering challenges. In the raw files, application and decision records are partitioned across procedural stages and claim types, causing Cartesian duplication that inflated joined rows by over 35 percent. Pre-aggregation CTEs in DuckDB consolidated records at the strict year, host, and origin grain. Official UNHCR statistical footnotes were integrated to apply statutory family multipliers (1.50x for US cases, 1.30x for UK claims), establishing a dual-ledger pipeline that reconciles raw filings with standardized headcounts.",
+      "Public discussions frequently conflate border arrivals with institutional processing capacity, obscuring how asylum claims actually move through legal systems. This project audits 16 consecutive years (2010 through 2025) of UNHCR records across 186 host countries. The analysis measures the gap between incoming claims and annual determinations, tracking 33.14 million applications and 26.92 million substantive decisions.",
+      "The raw records required solving practical data engineering problems. Application and decision records were partitioned across multiple procedural stages, causing table joins to duplicate rows by over 35 percent. Pre-aggregation CTEs in DuckDB consolidated the data at the year, host, and origin grain before joining. In addition, jurisdictions like the United States and the United Kingdom record family dockets rather than individuals, so official UNHCR multiplier footnotes (1.50x for the US, 1.30x for the UK) were applied to standardize raw filings into person-level headcounts.",
     ],
     execution: [
       "The audit revealed a cumulative 16-year operational deficit of 6.22 million unadjudicated claims, expanding the worldwide pending backlog tenfold from 835,969 in 2010 to 8,998,097 in 2025. The United States holds 41.3 percent of that global inventory (3.72 million cases). Furthermore, 33.7 percent of all closed proceedings (over 9.05 million claims) terminated without a substantive merits ruling through administrative dismissals, departures, or docket write-offs.",
-      "To deliver sub-second filtering without requiring a running database server, a Python pipeline compiles the consolidated DuckDB tables into static Parquet marts and precalculated JSON files under 150 KB. The Next.js 14 web client uses MapLibre GL for WebGL-accelerated vector cartography across 186 nations and Recharts for 16-year outcome streamgraphs. The application is deployed on Vercel with zero runtime database dependencies.",
+      "To make the data explorable in the browser without running a database server, a Python pipeline compiles the DuckDB tables into static Parquet and JSON files under 150 KB. The Next.js web application renders interactive MapLibre vector maps and Recharts streamgraphs with instant client-side filtering. Deploying precalculated data marts to Vercel removed server hosting overhead while keeping the entire 16-year dataset responsive.",
     ],
   },
   {
