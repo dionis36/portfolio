@@ -37,7 +37,7 @@ export default function PastExperience() {
                       alt={exp.company}
                       width={36}
                       height={36}
-                      className="w-full h-full object-contain filter grayscale contrast-125 opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <h3 className="text-base sm:text-lg font-medium text-primary">
